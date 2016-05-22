@@ -35,7 +35,7 @@ int main (int argc, char *argv[])
     exit(0);
 }
 ```
-
+![](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/test_atexit.png)
 
 ----------------------------------------------------------------
 ### 2. 进程终止
