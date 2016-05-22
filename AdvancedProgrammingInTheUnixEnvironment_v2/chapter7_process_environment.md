@@ -35,7 +35,6 @@ int main (int argc, char *argv[])
     exit(0);
 }
 ```
-![](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/test_atexit.png)
 
 ----------------------------------------------------------------
 ### 2. 进程终止
@@ -103,7 +102,7 @@ static void my_exit2(void)
 	printf("2nd exit handler\n");	
 }
 ```
-
+![](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/test_atexit.png)
 
 
 
