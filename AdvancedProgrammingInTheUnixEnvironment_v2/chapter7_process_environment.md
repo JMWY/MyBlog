@@ -24,7 +24,6 @@ main 函数是 C 程序进入点。
 ##### 命令行参数
 执行程序时，**调用 exec 的进程**将命令行参数传递给新程序。*Note:* echo 程序通常不回送第 0 个参数。
 ``` c
-/*@ test_atexit.c */
 #include <stdio.h>
 int main (int argc, char *argv[])
 {   
@@ -73,6 +72,7 @@ int main (int argc, char *argv[])
 - ISO C 规定，一个进程至少支持登记 32 个函数，即**终止处理程序(exit handler)**。为了确定平台支持的最大**终止处理程序数**，可查看 [sysconf 函数](http://pubs.opengroup.org/onlinepubs/009695399/functions/sysconf.html)中变量 ATEXIT_MAX。
 
 ``` c
+/*@ test_atexit.c */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
