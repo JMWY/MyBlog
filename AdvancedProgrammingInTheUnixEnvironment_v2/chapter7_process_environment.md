@@ -24,6 +24,7 @@ main 函数是 C 程序进入点。
 ##### 命令行参数
 执行程序时，**调用 exec 的进程**将命令行参数传递给新程序。*Note:* echo 程序通常不回送第 0 个参数。
 ``` c
+/*@ test_atexit.c */
 #include <stdio.h>
 int main (int argc, char *argv[])
 {   
