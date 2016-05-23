@@ -1,8 +1,8 @@
 # 进程环境
 
-### 1. main 函数 
+## 1. 进程启动（与 main 函数）
 main 函数是 C 程序进入点。
-##### 函数原型
+### 函数原型
 (ISO C 和 POSIX.1 支持的)原型有两个:  
 
     int main(void) { /* ... */ };
@@ -14,14 +14,14 @@ main 函数是 C 程序进入点。
 
 >第三个参数是环境表地址。现在通常用 getenv 和 putenv 函数来访问特定环境变量。
 
-##### 调用 main 函数
+### 调用 main 函数
 - 内核（通过一个 exec 函数）执行 C 程序时，首先调用一个特殊的启动例程（start-up routine），再调用 main 函数。  
 - **C 编译器**调用**链接编辑器**，然后**链接编辑器**设置**执行程序文件**，将**启动例程**指定为程序的**起始地址**。
 - **启动例程**（常用汇编语言编写）如果用 C 代码形式表示，大概为：  
 
         exit(main(argc, argv))
 
-##### 命令行参数
+### 命令行参数
 执行程序时，**调用 exec 的进程**将命令行参数传递给新程序。*Note:* echo 程序通常不回送第 0 个参数。
 ``` c
 #include <stdio.h>
@@ -37,7 +37,7 @@ int main (int argc, char *argv[])
 ```
 
 ----------------------------------------------------------------
-### 2. 进程终止
+## 2. 进程终止
 进程终止（termination）方式有 8 种：正常终止 5 种方式，异常终止 3 种:
 > (1) 从 main 返回      
 > (2) exit      
@@ -49,7 +49,7 @@ int main (int argc, char *argv[])
 > (7) 收到（终止）信号      
 > (8) 最后一个线程响应取消请求     
 
-##### exit 函数 
+### exit 函数 
 在头文件 [stdlib.h](http://pubs.opengroup.org/onlinepubs/7908799/xsh/stdlib.h.html) 中声明的原型为：
 
         void exit(int status); // (ISO C)
@@ -62,7 +62,7 @@ int main (int argc, char *argv[])
 - 参数 satus：终止状态（或退出状态，exit status）
 - **exit 函数**先调用**终止处理程序**，并关闭所有 I/O 流（为所有打开流调用 fclose 函数），然后调用 _exit(或_Exit) 进入内核
 
-##### atexit 函数 - 登记**终止处理程序**
+### atexit 函数 - 登记**终止处理程序**
 在头文件 [stdlib.h](http://pubs.opengroup.org/onlinepubs/7908799/xsh/stdlib.h.html) 中声明的原型为：
 
         int atexit(void (*func)(void));
@@ -103,27 +103,33 @@ static void my_exit2(void)
 	printf("2nd exit handler\n");	
 }
 ```
-![](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/test_atexit.png)
+
+![运行结果](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/test_atexit.png)
+
 
 
 
 ------------------------------------------------------------------
-### 3. 环境变量
+## 3. 环境变量
+
+
+
+
 
 ------------------------------------------------------------------
-### 4. 共享库
+## 4. 共享库
 
 --------------------------------------------------------------------
-### 5. C 程序内存空间
+## 5. C 程序内存空间
 
 --------------------------------------------------------------------
-### 6. 跳转函数
+## 6. 跳转函数
 
 --------------------------------------------------------------------
-### 7. 进程资源限制
+## 7. 进程资源限制
 
 -------------------------------------------------------------------
-### 8. 习题
+## 8. 习题
 
 
 ``` c
