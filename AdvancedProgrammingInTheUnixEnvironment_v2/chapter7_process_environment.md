@@ -1,6 +1,6 @@
 # 进程环境
 
-## 1. 进程启动（与 main 函数）
+## 1. C 程序启动（main 函数）
 main 函数是 C 程序进入点。
 ### 函数原型
 (ISO C 和 POSIX.1 支持的)原型有两个:  
@@ -112,9 +112,28 @@ static void my_exit2(void)
 ------------------------------------------------------------------
 ## 3. 环境变量
 
+每个程序都有一张**环境表（environment list）**，地址为全局变量 environ:
+	
+	extern char **environ; 
+	
+可用于查看整个环境。其大致形式如下：
 
+·图·
+<br />
 
+头文件 stdlib.h 中，定义了环境变量的访问函数：
 
+	char *getenv(const char *name);  // return: SUCESS, 对应 value 的指针; FAIL: NULL
+	int putenv(char *str);
+	int setenv(const char *name, const char *value, int rewrite);
+	int unsetenv(const char *name); // return: SUCESS, 0; FAIL: 非0 
+
+**解释**： 		
+*putenv*: 字符串形式为 name=value，放入环境表。若 name 已存在，则先删除原定义。		
+*setenv*: name 存在时，(a) rewrite 非0，删除原定义 (b) rewirte 为0，不删除原定义，返回0 。		
+*unsetenv*: 删除 name 定义。不存在也返回0 。		
+<br />
+**环境表修改策略:**
 
 ------------------------------------------------------------------
 ## 4. 共享库
