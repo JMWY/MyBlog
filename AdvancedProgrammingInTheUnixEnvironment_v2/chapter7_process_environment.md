@@ -129,9 +129,9 @@ static void my_exit2(void)
 	int unsetenv(const char *name); // return: SUCESS, 0; FAIL: 非0 
 
 **解释**： 		
-*putenv*: 字符串形式为 name=value，放入环境表。若 name 已存在，则先删除原定义。		
-*setenv*: name 存在时，(a) rewrite 非0，删除原定义 (b) rewirte 为0，不删除原定义，返回0 。		
-*unsetenv*: 删除 name 定义。不存在也返回0 。		
+`putenv`: 字符串形式为 name=value，放入环境表。若 name 已存在，则先删除原定义。		
+`setenv`: name 存在时，(a) rewrite 非0，删除原定义 (b) rewirte 为0，不删除原定义，返回0 。		
+`unsetenv`: 删除 name 定义。不存在也返回0 。		
 <br />
 **环境表修改策略:**
 
