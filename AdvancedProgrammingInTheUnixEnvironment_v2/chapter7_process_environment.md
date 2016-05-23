@@ -123,6 +123,8 @@ static void my_exit2(void)
 
 **Single UNIX Specification 定义的环境变量**
 
+·图·
+<br />
 
 头文件 stdlib.h 中，定义了环境变量的访问函数：
 
