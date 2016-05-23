@@ -121,6 +121,9 @@ static void my_exit2(void)
 ·图·
 <br />
 
+**Single UNIX Specification 定义的环境变量**
+
+
 头文件 stdlib.h 中，定义了环境变量的访问函数：
 
 	char *getenv(const char *name);  // return: SUCESS, 对应 value 的指针; FAIL: NULL
@@ -133,7 +136,9 @@ static void my_exit2(void)
 `setenv`: name 存在时，(a) rewrite 非0，删除原定义 (b) rewirte 为0，不删除原定义，返回0 。		
 `unsetenv`: 删除 name 定义。不存在也返回0 。		
 <br />
-**环境表修改策略:**
+**函数对环境表的修改策略:**
+<br />
+### 环境变量的设置
 
 ------------------------------------------------------------------
 ## 4. 共享库
