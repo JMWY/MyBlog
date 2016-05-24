@@ -127,7 +127,7 @@ static void my_exit2(void)
 
 **Single UNIX Specification 定义的环境变量**
 
-！[](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.PNG)
+![环境变量](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.PNG)
 <br />
 
 头文件 stdlib.h 中，定义了环境变量的访问函数：
