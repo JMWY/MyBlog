@@ -152,7 +152,8 @@ static void my_exit2(void)
 3. dynamic lib(lib/.so): **LD_LIBRARY_PATH**
 4. static lib(lib/.a):  **LIBRARY_PATH**		
 <br />
-**PS:** (《Shell 脚步攻略》)推荐函数（写在 .bashrc,用来添加环境变量）prepend:		
+**PS:** 
+(《Shell 脚步攻略》)推荐函数（写在 .bashrc,用来添加环境变量）prepend:		
 `prepend() { [ -d "$2" ] && eval $1=\"$2\$\{$1:+':'\$$1\}\" && export $1 ; }`
 
 
