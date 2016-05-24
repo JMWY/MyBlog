@@ -104,9 +104,11 @@ static void my_exit2(void)
 }
 ```
 
-![运行结果](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/test_atexit.png)
+![运行结果](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/test_atexit.png)		
+<br />
 
-**C程序启动与终止**
+**C程序启动与终止图：**		
+<br />
 ![C程序启动与终止](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/C%E7%A8%8B%E5%BA%8F%E5%90%AF%E5%8A%A8%E4%B8%8E%E7%BB%88%E6%AD%A2.PNG)
 
 
@@ -119,12 +121,13 @@ static void my_exit2(void)
 	
 可用于查看整个环境。其大致形式如下：
 
-·图·
+![环境表例图](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.PNG)
+
 <br />
 
 **Single UNIX Specification 定义的环境变量**
 
-·图·
+！[](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.PNG)
 <br />
 
 头文件 stdlib.h 中，定义了环境变量的访问函数：
