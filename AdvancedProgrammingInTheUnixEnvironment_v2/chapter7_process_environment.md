@@ -145,6 +145,17 @@ static void my_exit2(void)
 **函数对环境表的修改策略:**
 <br />
 ### 环境变量的设置
+> Effective for all users: `/etc/profile` ; Just for current user: `~/.bashrc` or `~/bash_profile`
+
+1. executable file(bin/*): add in **PATH**		
+2. head file(include/.h): **C_INCLUDE_PATH** or **CPLUS_INCLUDE_PATH**
+3. dynamic lib(lib/.so): **LD_LIBRARY_PATH**
+4. static lib(lib/.a):  **LIBRARY_PATH**		
+<br />
+(Shell 脚步攻略)推荐函数（写在 .bashrc,用来添加环境变量）prepend:
+`prepend() { [ -d "$2" ] && eval $1=\"$2\$\{$1:+':'\$$1\}\" && export $1 ; }`
+
+
 
 ------------------------------------------------------------------
 ## 4. 共享库
