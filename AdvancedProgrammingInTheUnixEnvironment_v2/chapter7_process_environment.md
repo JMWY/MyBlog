@@ -106,7 +106,7 @@ static void my_exit2(void)
 
 ![运行结果](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/test_atexit.png)
 
-
+**C程序启动与终止**
 ![C程序启动与终止](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/C%E7%A8%8B%E5%BA%8F%E5%90%AF%E5%8A%A8%E4%B8%8E%E7%BB%88%E6%AD%A2.PNG)
 
 
