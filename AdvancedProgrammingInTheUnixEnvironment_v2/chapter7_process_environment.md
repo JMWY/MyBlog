@@ -164,6 +164,54 @@ static void my_exit2(void)
 **共享库**： 运行时加载的动态链接库(.so文件)。		
 **优点**：
 - 减少可执行文件长度（不用包含公用的**库例程**）
+
+```c
+/* util.c */
+#include <stdio.h>
+
+void print(const char *message) 
+{
+	if (!message) {
+		printf("<null>\n");
+	} else {
+		printf("%s\n", message);
+	}
+}
+
+int subtract(const int minuend, const int subtrahend)
+{	
+	return (minuend - subtrahend);
+}
+
+/* util.h */
+#ifndef __util_h
+#define __util_h
+
+extern void print(const char* mes);
+extern int subtract(const int minuend, const int subtrahend);
+
+#endif
+
+/* DemoMain.c */
+#include "util.h"
+#include <string.h>
+#include <stdio.h>
+
+int main(void) 
+{
+	char *str = "Message: How do you do.";
+	int A = 100;
+	int B = 1;
+	
+	print(str);		
+	printf("subtract: %d\n", subtract(A, B));
+	
+	return 0;
+}
+
+```
+
+
 - 库函数**新版本**可直接代替**老版本**使用（无需重新编译和链接相关的**可执行程序**）
 - 节省内存空间（内存维护**库例程**的**一个副本**，让**所有进程**都可引用）		
 
