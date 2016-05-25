@@ -170,7 +170,7 @@ static void my_exit2(void)
 **不足**:		
 - 增加了运行时间开销（产生在第一次调用库函数时）
 
-** Example **
+**Example**
 
 ```c
 /* util.c */
