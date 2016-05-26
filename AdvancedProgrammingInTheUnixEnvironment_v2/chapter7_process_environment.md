@@ -290,7 +290,7 @@ struct rlimit {
 
 |Limit          |    Description|
 | :----------   | :----------:  |
-|RLIMIT_AS *(RLIMIT_VMEM)* |可用内存最大总长度（字节），会影响 `sbrk` 和 `mmap` 函数|
+|RLIMIT_AS *(RLIMIT_VMEM)* |可用内存最大总长度（字节），会影响 `sbrk` (1.11节)和 `mmap` (14.8节)函数|
 |RLIMIT_CORE    | core 文件的最大值（字节）|
 |RLIMIT_CPU     |CPU 时间最大量(s)，超出软限制，会收到 `SIGXCPU` 信号 |
 |RLIMIT_DATA    |初始化数据、非初始化数据及堆的总和的最大值（字节）|
