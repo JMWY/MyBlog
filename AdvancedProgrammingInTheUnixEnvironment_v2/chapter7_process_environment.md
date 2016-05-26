@@ -253,10 +253,10 @@ int main(void)
 - `free`: 忘记调用 `free` 是内存泄露根源，常用的检测工具有 **Valgrind** 等。
 --------------------------------------------------------------------
 ## 6. 跳转函数
-goto 语句可以实现函数内调转（常用于`RETRY`和对（异常等）信号的跳转处理）。
+goto 语句可以实现函数内调转（常用于 `RETRY:` 和对（异常等）信号的跳转处理）。		
 头文件 [setjmp.h](http://pubs.opengroup.org/onlinepubs/007908799/xsh/setjmp.h.html) 定义的执行非局部的跳转的函数有：
 
-	int setjmp(jmp_buf env); // RETURN: 直接调用, 0; 从`longjmp`调用， 非0.
+	int setjmp(jmp_buf env); // RETURN: 直接调用, 0; 从 `longjmp` 调用， 非0.
 	void longjmp(jmp_buf env, int val);
 	
 	
