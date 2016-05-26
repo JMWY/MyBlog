@@ -313,11 +313,12 @@ struct rlimit {
 -------------------------------------------------------------------
 ## 8. 习题
 
-
+**习题 7.1**
 ``` c
 #include <stdio.h>
-int main (int argc, char *argv[]) 
+main (int argc, char *argv[]) 
 {
+	printf("%d\n",printf("hello world!\n"));
 }
 ```
 
