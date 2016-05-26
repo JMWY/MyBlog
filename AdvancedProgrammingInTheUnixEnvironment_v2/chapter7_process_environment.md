@@ -238,12 +238,31 @@ int main(void)
 - 其它类型段：符号表的段，调试信息的段，动态库链接表的段等不装载。
 - **注意**磁盘上的程序文件只有正文段和初始化数据段。
 
-### 
+### 内存分配
+**JMWY 注：内存管理是一个很重要的课题，有很多相关的工具和编程技巧。**
+在文件 stdlib.h  中，定义了三个内存空间动态分配函数（ISO C）:
 
+	void *malloc(size_t size);
+	void *calloc(size_t nobj, size_t size);
+	void *realloc(void *ptr, size_t newsize); // RETURN: SUCESS, 非空; FAIL: NULL.
+	
+	void free(void *ptr);
 
-
+- `calloc`: 分配 nobj * size , 空间初始化为 0.
+- `realloc`: 更改分配区长度（增或减）。当增加长度时，原存储区后没有足够的扩充空间，则分配另一个足够大的存储区，释放原存储区，返回新存储区域指针，所以参数 `ptr` 可能会失效。另外，新增区域初始值不确定。
+- `free`: 忘记调用 `free` 是内存泄露根源，常用的检测工具有 **Valgrind** 等。
 --------------------------------------------------------------------
 ## 6. 跳转函数
+goto 语句可以实现函数内调转（常用于`RETRY`和对（异常等）信号的跳转处理）。
+头文件 [setjmp.h](http://pubs.opengroup.org/onlinepubs/007908799/xsh/setjmp.h.html) 定义的执行非局部的跳转的函数有：
+
+	int setjmp(jmp_buf env); // RETURN: 直接调用, 0; 从`longjmp`调用， 非0.
+	void longjmp(jmp_buf env, int val);
+	
+	
+
+
+
 
 --------------------------------------------------------------------
 ## 7. 进程资源限制
