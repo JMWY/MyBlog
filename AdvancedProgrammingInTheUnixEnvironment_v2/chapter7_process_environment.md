@@ -288,6 +288,25 @@ struct rlimit {
 **参数 `resource` 取值如图：**
 ![对资源限制的支持](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/resoure_limit_support_by_OS.PNG)
 
+|Limit          |    Description|
+| :----------   | :----------:  |
+|RLIMIT_AS or RLIMIT_VMEM  |可用内存最大总长度（字节），会影响 `sbrk` 和 `mmap` 函数|
+|RLIMIT_CPU     |CPU 时间最大量(s)，超出软限制，会收到 `SIGXCPU` 信号 |
+|RLIMIT_DATA    |初始化数据、非初始化数据及堆的总和的最大值（字节）|
+|RLIMIT_FSIZE   |创建的文件的最大值(字节)，超出软限制，会收到 `SIGXFSZ` 信号 |
+|RLIMIT_MEMLOCK |使用 `mlock` 能锁定内存中最大长度（字节）|
+|RLIMIT_MSGQUEUE|分配给POSIX消息队列的最大内存（字节）|
+|RLIMIT_NICE    |影响调度优先级的进程 `nice`(8.16节)值上限|
+|RLIMIT_NOFILE  |打开的最大文件数。更改会影响 `sysconf(_SC_OPEN_MAX)` 的返回值 |
+|RLIMIT_NPROC   |每个真实用户ID可拥有最大子进程数。更改会影响 `sysconf(_SC_CHILD_MAX)` 的返回值 |
+|RLIMIT_NPTS    |一个用户一次可以打开伪终端（pseudo terminals）最大数（19章）|
+|RLIMIT_RSS     |最大驻内存集（resident set size）（字节），物理内存少时，内核取回其超出**RSS**部分|
+|RLIMIT_SBSIZE   |用户可占有的最大套接字缓存（socket buffers）（字节）|
+|RLIMIT_SIGPENDING|等待进程的最大信号数，该限制被 `sigqueue` 函数强制执行|
+|RLIMIT_STACK   | 栈的最大长度（字节）|
+|RLIMIT_SWAP    |用户占有的交换空间最大量(字节)|
+
+
 
 
 -------------------------------------------------------------------
