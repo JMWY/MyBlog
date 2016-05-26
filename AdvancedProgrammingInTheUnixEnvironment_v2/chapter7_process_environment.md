@@ -313,7 +313,8 @@ struct rlimit {
 -------------------------------------------------------------------
 ## 8. 习题
 
-**习题 7.1**
+**习题 7.1**		
+这种情况下，Interl x86系统，FreeBSD 和 Linux 会将 `printf` 返回值(*打印字节数*)变成 `main` 返回值。
 ``` c
 #include <stdio.h>
 main (int argc, char *argv[]) 
@@ -321,6 +322,6 @@ main (int argc, char *argv[])
 	printf("%d\n",printf("hello world!\n"));
 }
 ```
-
+![](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/7.1.png)
 
 
