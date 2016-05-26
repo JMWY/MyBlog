@@ -279,14 +279,14 @@ struct rlimit {
 	rlim_t  rlim_max; /* hard limit: maximum value for rlim_cur */
 };
 ```
-- 
+更改资源限制的三条规则：		
+1. 修改软限制值时， <= 硬限制值		
+2. 降低硬限制值时， >= 软限制值		
+3. 只超级用户进程才可提高硬限制值。 		
+（最大值常量： RLIM_INFINITY）		
 
-更改资源限制的三条规则：
-1. 修改软限制值时， <= 硬限制值
-2. 降低硬限制值时， >= 软限制值
-3. 只超级用户进程才可提高硬限制值。 
-（最大值常量： RLIM_INFINITY）
-
+**参数 `resource` 取值如图：**
+![对资源限制的支持](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/resoure_limit_support_by_OS.PNG)
 
 
 
