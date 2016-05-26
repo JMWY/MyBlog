@@ -229,10 +229,14 @@ int main(void)
 内存中，C 程序组成： **正文段（Text segment）**，**初始化数据段（Initialized data segment）**，**非初始化数据段（Uninitialized data segment）**，**栈（Stack）**，**堆（Heap）**。
 
 **内存布局如下：**		
-<br />
 
 ![内存布局](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/%E5%86%85%E5%AD%98%E5%AE%89%E6%8E%92.PNG)
 
+- 正文段：CPU 执行的机器指令；通常可共享；只读。
+- 初始化数据段： 函数外明确初始化的变量。
+- 非初始化数据段：称为 bss(block started by symbol) 段；函数外的声明；初始化为 0.
+
+### 
 
 
 
