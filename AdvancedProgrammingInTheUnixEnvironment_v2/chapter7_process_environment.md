@@ -251,6 +251,7 @@ int main(void)
 - `calloc`: 分配 nobj * size , 空间初始化为 0.
 - `realloc`: 更改分配区长度（增或减）。当增加长度时，原存储区后没有足够的扩充空间，则分配另一个足够大的存储区，释放原存储区，返回新存储区域指针，所以参数 `ptr` 可能会失效。另外，新增区域初始值不确定。
 - `free`: 忘记调用 `free` 是内存泄露根源，常用的检测工具有 **Valgrind** 等。
+
 --------------------------------------------------------------------
 ## 6. 跳转函数
 goto 语句可以实现函数内调转（常用于 `RETRY:` 和对（异常等）信号的跳转处理）。		
@@ -271,7 +272,22 @@ goto 语句可以实现函数内调转（常用于 `RETRY:` 和对（异常等�
 	int getrlimit(int resource, struct rlimit *rlptr);
 	int setrlimit(int resource, const struct rlimit *rlptr); // RETURN: SUCESS, 0
 
-其中
+其中，
+```c
+struct rlimit {
+	rlim_t  rlim_cur; /* soft limit: current limit */
+	rlim_t  rlim_max; /* hard limit: maximum value for rlim_cur */
+};
+```
+- 
+
+更改资源限制的三条规则：
+1. 修改软限制值时， <= 硬限制值
+2. 降低硬限制值时， >= 软限制值
+3. 只超级用户进程才可提高硬限制值。 
+（最大值常量： RLIM_INFINITY）
+
+
 
 
 -------------------------------------------------------------------
