@@ -390,6 +390,14 @@ int main(void)
 }
 ```
 ![运行结果](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/test_var.png)
+
+- **内存**中的变量具有 `longjmp` 时的值；**CPU** 和**浮点寄存器**中的变量会恢复为调用 `setjmp` 时的值。
+- So，编写非局部跳转的可移植程序，必须用 `volatile` 属性。
+
+
+
+
+
 --------------------------------------------------------------------
 ## 7. 进程资源限制
 通常是在系统初始化时由**进程 0** 建立，而后被其它进程继承的。头文件 [sys/resource.h](http://pubs.opengroup.org/onlinepubs/007908799/xsh/sysresource.h.html) 定义了对资源限制**查询**和**更改**的函数:
