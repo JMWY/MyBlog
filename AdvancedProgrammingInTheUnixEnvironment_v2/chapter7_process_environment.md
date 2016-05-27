@@ -289,7 +289,7 @@ int main(void)
 {	
 	char line[MAXLINE];
 	if (setjmp(jmpbuffer) != 0) 
-		printf("error\n %s", SPER);
+		printf("error\n " SPER);
 	while (fgets(line, MAXLINE, stdin) != NULL) 
 		do_line(line);
 	exit(0);
