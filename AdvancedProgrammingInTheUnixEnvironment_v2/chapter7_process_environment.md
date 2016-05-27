@@ -260,7 +260,59 @@ goto 语句可以实现函数内调转（常用于 `RETRY:` 和对（异常等�
 	int setjmp(jmp_buf env); // RETURN: 直接调用, 0; 从 `longjmp` 调用， 非0.
 	void longjmp(jmp_buf env, int val);
 	
-	
+```c
+/* test_jump.c */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <setjmp.h>
+
+#define SPER	"------------"
+#define MAXLINE 10240
+
+#define TOK_ADD 5
+
+void do_line(char *ptr); 
+void cmd_add(void); 
+int get_token(void);
+
+
+jmp_buf jmpbuffer;
+
+int main(void) 
+{	
+	char line[MAXLINE];
+	if (setjmp(jmpbuffer) != 0) 
+		printf("error\n %s", SPER);
+	while (fgets(line, MAXLINE, stdin) != NULL) 
+		do_line(line);
+	return 0;
+}
+
+char *tok_ptr;
+
+void do_line(char *ptr) 
+{
+	int cmd;
+	tok_ptr = ptr; // assignent value for get_token()
+	while ((cmd = get_token()) > 0) {
+		switch (cmd) {
+		case TOK_ADD:
+			cmd_add();
+			break;
+		}
+	}
+}
+
+void cmd_add(void) 
+{	
+	int token;
+	if ((token = get_token()) < 0) 
+		longjmp(jmpbuffer, 1);
+	printf("excute: add <var>\n");
+}
+
+```
 
 
 
