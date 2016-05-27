@@ -312,6 +312,27 @@ void cmd_add(void)
 	printf("excute: add <var>\n");
 }
 
+int get_token(void) 
+{
+	size_t i = 0;
+	char *cmd_buff = (char *)malloc(strlen(tok_ptr) + 1);
+	if (NULL == cmd_buff) 
+		return -2;
+	while(tok_ptr[i] != '\0' && tok_ptr[i] != ' ') {
+		cmd_buff[i] = tok_ptr[i++];
+	}
+	if (0 == i) 
+		return -1;
+	tok_ptr += tok_ptr[i] ? i+1 : i;
+
+	if (strcmp(cmd_buff, "add") == 0)
+		return TOK_ADD;
+	
+	enum{ OTHER_OPTION };
+	return OTHER_OPTION;
+	
+}
+
 ```
 ![运行结果](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/test_jump.png)
 
