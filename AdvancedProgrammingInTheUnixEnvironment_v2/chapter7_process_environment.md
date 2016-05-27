@@ -292,7 +292,7 @@ int main(void)
 		printf("error\n %s", SPER);
 	while (fgets(line, MAXLINE, stdin) != NULL) 
 		do_line(line);
-	return 0;
+	exit(0);
 }
 
 char *tok_ptr;
