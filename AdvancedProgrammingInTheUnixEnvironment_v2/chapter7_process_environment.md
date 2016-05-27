@@ -342,6 +342,8 @@ int get_token(void)
 ```
 ![运行结果](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/test_jump.png)
 
+**对 Automatic, Register, and Volatile 类型变量的影响**
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -387,7 +389,7 @@ int main(void)
 	exit(0);
 }
 ```
-
+![运行结果](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/test_var.png)
 --------------------------------------------------------------------
 ## 7. 进程资源限制
 通常是在系统初始化时由**进程 0** 建立，而后被其它进程继承的。头文件 [sys/resource.h](http://pubs.opengroup.org/onlinepubs/007908799/xsh/sysresource.h.html) 定义了对资源限制**查询**和**更改**的函数:
