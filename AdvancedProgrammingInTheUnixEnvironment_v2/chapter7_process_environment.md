@@ -504,6 +504,7 @@ static void pr_limits(char *name, int resource)
 }
 
 ```
+![](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/test_res.png)
 
 -------------------------------------------------------------------
 ## 8. 习题
@@ -520,4 +521,11 @@ main (int argc, char *argv[])
 ![](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/7.1.png)
 
 **习题 7.7**
-Q: size 
+Q: size 命令的输出结果中，为什么没有堆和栈的大小？
+> 只有通过 `exec` 函数执行一个程序时，才会分配堆和堆栈。
+
+**习题 7.8**
+Q: size 命令的输出结果中，为什么文件大小不等于文本和数据大小之和？
+> 可执行文件包含了用于调试 core 文件的符号表信息，用 `strip` 命令可以删除这些信息。
+
+
