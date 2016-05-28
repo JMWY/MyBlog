@@ -3,6 +3,7 @@
 * [1. C 程序启动（main 函数）](#1)
 * [2. 进程终止](#2)
 * [3. 环境变量](#3)
+* [环境变量的设置](#3.1)
 * [4. 共享库](#4)
 * [5. C 程序内存空间](##5)
 * [6. 跳转函数](##6)
@@ -161,6 +162,7 @@ static void my_exit2(void)
 - 添加新 `name` :**(1)**第一次添加，`malloc` 并复制原环境表(一列指针)到**堆**  **(2)** 否则，`remalloc` 增加一个指针空间。
 <br />
 
+<<h3 id="3.1"></h2>>
 ### 环境变量的设置
 > Effective for all users: `/etc/profile` ; Just for current user: `~/.bashrc` or `~/bash_profile`
 
