@@ -8,13 +8,13 @@
 
 | ID    | book |  plan time |  create time  |
 | :---: | :--- | :-------:  | :---------:   |
-| 1     | Unix 环境高级编程（第三版）(中、英) | 2016.05.21 ~ 2016.08.21 | 2015.06.29 |
+| 1     | Unix 环境高级编程（第三版）(中、英) | 2016.05.21 ~ 2016.09.30 | 2015.06.29 |
 | 2     | 深入理解 Linux 内核（第三版)（中）  |  ----                 |  ----     |
 
 
 ----------------------------------------
 ## 2. reading and writing blogs
-### Unix 环境高级编程(第三版) （2016.5.21 ~ 2016.09.31） 
+### Unix 环境高级编程(第三版) 
 | ID   | title | write time | state | create time|
 | :--- | :---  | :-------: | :---: | :--------: |
 | 1 | [第七章：进程环境](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v3/chapter7_process_environment.md) | 2016.05.22 ~ 2016.05.28 | `completed` | 2016.05.21
