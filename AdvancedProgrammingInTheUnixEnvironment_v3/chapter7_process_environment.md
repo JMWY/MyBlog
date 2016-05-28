@@ -10,7 +10,7 @@
 * [8. 习题](##8)
 
 
-
+<h2 id="1"></h2>
 ## 1. C 程序启动（main 函数）
 main 函数是 C 程序进入点。
 ### 函数原型
@@ -48,7 +48,7 @@ int main (int argc, char *argv[])
 ```
 
 ----------------------------------------------------------------
-<span id="2">test</span>
+<h2 id="2"></h2>
 ## 2. 进程终止
 进程终止（termination）方式有 8 种：正常终止 5 种方式，异常终止 3 种:
 > (1) 从 main 返回      
@@ -125,6 +125,7 @@ static void my_exit2(void)
 
 
 ------------------------------------------------------------------
+<h2 id="3"></h2>
 ## 3. 环境变量
 
 每个程序都有一张**环境表（environment list）**，地址为全局变量 environ:
@@ -177,6 +178,7 @@ static void my_exit2(void)
 
 
 ------------------------------------------------------------------
+<h2 id="4"></h2>
 ## 4. 共享库
 **共享库**： 运行时加载的动态链接库(.so文件)。		
 **优点**：
@@ -241,6 +243,7 @@ int main(void)
 
 
 --------------------------------------------------------------------
+<h2 id="5"></h2>
 ## 5. C 程序内存空间
 ### C 程序内存布局
 内存中，C 程序组成： **正文段（Text segment）**，**初始化数据段（Initialized data segment）**，**非初始化数据段（Uninitialized data segment）**，**栈（Stack）**，**堆（Heap）**。
@@ -270,6 +273,7 @@ int main(void)
 - `free`: 忘记调用 `free` 是内存泄露根源，常用的检测工具有 **Valgrind** 等。
 
 --------------------------------------------------------------------
+<h2 id="6"></h2>
 ## 6. 跳转函数
 goto 语句可以实现**函数内调转**（常用于 `RETRY:` 和对（异常等）信号的跳转处理）。		
 头文件 [setjmp.h](http://pubs.opengroup.org/onlinepubs/007908799/xsh/setjmp.h.html) 定义的执行**非局部的跳转**的函数有：
@@ -416,6 +420,7 @@ int main(void)
 
 
 --------------------------------------------------------------------
+<h2 id="7"></h2>
 ## 7. 进程资源限制
 通常是在系统初始化时由**进程 0** 建立，而后被其它进程继承的。头文件 [sys/resource.h](http://pubs.opengroup.org/onlinepubs/007908799/xsh/sysresource.h.html) 定义了对资源限制**查询**和**更改**的函数:
 
@@ -524,6 +529,7 @@ static void pr_limits(char *name, int resource)
 ![](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v3/images/chapter7/test_res.png)
 
 -------------------------------------------------------------------
+<h2 id="8"></h2>
 ## 8. 习题
 
 **习题 7.1**		
