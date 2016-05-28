@@ -147,6 +147,7 @@ static void my_exit2(void)
 - 修改已有 `name` :**(1)** `value` <= 现有 `value`， 直接写  **(2)** 否则，`malloc` 安置新串，释放老串（新串内容在**堆**中）。
 - 添加新 `name` :**(1)**第一次添加，`malloc` 并复制原环境表(一列指针)到**堆**  **(2)** 否则，`remalloc` 增加一个指针空间。
 <br />
+
 ### 环境变量的设置
 > Effective for all users: `/etc/profile` ; Just for current user: `~/.bashrc` or `~/bash_profile`
 
@@ -155,6 +156,7 @@ static void my_exit2(void)
 3. dynamic lib(lib/.so): **LD_LIBRARY_PATH**
 4. static lib(lib/.a):  **LIBRARY_PATH**		
 <br />
+
 **PS:** 
 (《Shell 脚步攻略》)推荐函数（写在 .bashrc,用来添加环境变量）prepend:		
 `prepend() { [ -d "$2" ] && eval $1=\"$2\$\{$1:+':'\$$1\}\" && export $1 ; }`		
