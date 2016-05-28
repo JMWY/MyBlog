@@ -17,8 +17,8 @@
 <br />
 <br />
 > Modify time: 2016-5-21  
- *Action: make plan of blog id=1*
-> Modify time: 2016-5-28  
+ *Action: make plan of blog id=1*       
+> Modify time: 2016-5-28          
  *Action: make plan of blog id=2*
 ------------------------------------------------------
 
