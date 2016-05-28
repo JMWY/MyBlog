@@ -104,12 +104,12 @@ static void my_exit2(void)
 }
 ```
 
-![运行结果](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/test_atexit.png)		
+![运行结果](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v3/images/chapter7/test_atexit.png)		
 <br />
 
 **C程序启动与终止图：**		
 <br />
-![C程序启动与终止](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/C%E7%A8%8B%E5%BA%8F%E5%90%AF%E5%8A%A8%E4%B8%8E%E7%BB%88%E6%AD%A2.PNG)
+![C程序启动与终止](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v3/images/chapter7/C%E7%A8%8B%E5%BA%8F%E5%90%AF%E5%8A%A8%E4%B8%8E%E7%BB%88%E6%AD%A2.PNG)
 
 
 ------------------------------------------------------------------
@@ -121,13 +121,13 @@ static void my_exit2(void)
 	
 可用于查看整个环境。其大致形式如下：
 
-![环境表例图](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.PNG)
+![环境表例图](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v3/images/chapter7/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.PNG)
 
 <br />
 
 **Single UNIX Specification 定义的环境变量**
 
-![环境变量](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.PNG)
+![环境变量](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v3/images/chapter7/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.PNG)
 <br />
 
 头文件 stdlib.h 中，定义了环境变量的访问函数：
@@ -222,7 +222,7 @@ int main(void)
 }
 
 ```
-![运行结果](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/shared_lib.png)
+![运行结果](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v3/images/chapter7/shared_lib.png)
 
 
 
@@ -235,7 +235,7 @@ int main(void)
 
 **内存布局如下：**		
 
-![内存布局](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/%E5%86%85%E5%AD%98%E5%AE%89%E6%8E%92.PNG)
+![内存布局](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v3/images/chapter7/%E5%86%85%E5%AD%98%E5%AE%89%E6%8E%92.PNG)
 
 - 正文段：CPU 执行的机器指令；通常可共享；只读。
 - 初始化数据段： 函数外明确初始化的变量。
@@ -345,7 +345,7 @@ int get_token(void)
 }
 
 ```
-![运行结果](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/test_jump.png)
+![运行结果](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v3/images/chapter7/test_jump.png)
 
 **对 Automatic, Register, and Volatile 类型变量的影响**
 
@@ -394,7 +394,7 @@ int main(void)
 	exit(0);
 }
 ```
-![运行结果](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/test_var.png)
+![运行结果](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v3/images/chapter7/test_var.png)
 
 - **内存**中的变量具有 `longjmp` 时的值；**CPU** 和**浮点寄存器**中的变量会恢复为调用 `setjmp` 时的值。
 - So，编写非局部跳转的可移植程序，必须用 `volatile` 属性。
@@ -424,7 +424,7 @@ struct rlimit {
 （最大值常量： RLIM_INFINITY）		
 
 **参数 `resource` 取值如图：**
-![对资源限制的支持](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/resoure_limit_support_by_OS.PNG)
+![对资源限制的支持](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v3/images/chapter7/resoure_limit_support_by_OS.PNG)
 
 |Limit          |    Description|
 | :----------   | :----------:  |
@@ -509,7 +509,7 @@ static void pr_limits(char *name, int resource)
 }
 
 ```
-![](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/test_res.png)
+![](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v3/images/chapter7/test_res.png)
 
 -------------------------------------------------------------------
 ## 8. 习题
@@ -523,7 +523,7 @@ main (int argc, char *argv[])
 	printf("%d\n",printf("hello world!\n"));
 }
 ```
-![](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/7.1.png)
+![](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v3/images/chapter7/7.1.png)
 
 **习题 7.7**		
 Q: size 命令的输出结果中，为什么没有堆和栈的大小？
