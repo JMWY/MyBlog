@@ -143,6 +143,9 @@ static void my_exit2(void)
 `unsetenv`: 删除 name 定义。不存在也返回0 。		
 <br />
 **函数对环境表的修改策略:**
+- **环境表** 和 **环境字符串**通常放在进程存储空间顶部(栈之上)，该空间长度却不能增加(不能向上扩展也不能移动栈)。
+- 修改已有 `name` :**(1)** `value` <= 现有 `value`， 直接写  **(2)** 否则，`malloc` 安置新串，释放老串（新串内容在**堆**中）。
+- 添加新 `name` :**(1)**第一次添加，`malloc` 并复制原环境表(一列指针)到**堆**  **(2)** 否则，`remalloc` 增加一个指针空间。
 <br />
 ### 环境变量的设置
 > Effective for all users: `/etc/profile` ; Just for current user: `~/.bashrc` or `~/bash_profile`
