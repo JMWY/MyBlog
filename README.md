@@ -3,7 +3,7 @@
 
 -------------------------------------------
 ## 1. booklist
-    1. AdvancedProgrammingInTheUnixEnvironment_v2   #<Unix 环境高级编程(第三版)>  
+    1. AdvancedProgrammingInTheUnixEnvironment_v3   #<Unix 环境高级编程(第三版)>  
     2. UnderstandTheLinuxKernel_v3   #<深入理解 Linux 内核(第三版)>
 
 ----------------------------------------
