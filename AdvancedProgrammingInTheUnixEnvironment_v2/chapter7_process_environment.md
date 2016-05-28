@@ -440,8 +440,70 @@ struct rlimit {
 |RLIMIT_STACK   | 栈的最大长度（字节）|
 |RLIMIT_SWAP    |用户占有的交换空间最大量(字节)|
 
+**Example**
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/resource.h>
 
+/* # is string-creation operator */
+#define doit(name) pr_limits(#name, name)
+#define info_limit(name) doit(RLIMIT_##name)
 
+static void pr_limits(char *, int);
+
+int main (void) 
+{
+#ifdef RLIMIT_AS	
+	info_limit(AS);
+#endif					
+#ifdef RLIMIT_NPROC	
+	info_limit(NPROC);
+#endif					
+#ifdef RLIMIT_RSS
+	info_limit(STACK);
+#endif					
+#ifdef RLIMIT_RSS
+	info_limit(STACK);
+#endif					
+#ifdef RLIMIT_VMEM
+	info_limit(VMEM);
+#endif				
+	printf("------\n");
+	info_limit(CORE);
+	info_limit(CPU);
+	info_limit(DATA);
+	info_limit(FSIZE);
+	info_limit(STACK);
+	info_limit(NOFILE);
+	exit(0);
+}
+
+static void pr_limits(char *name, int resource)
+{
+	struct rlimit limit;
+	unsigned long long lim; // uniform format: "%10lld"
+	if (getrlimit(resource, &limit) != 0) {
+		printf("getrlimit error for %s", name);
+		exit(-1);
+	}
+	printf("%-14s	", name);
+	if (RLIM_INFINITY == limit.rlim_cur)
+		printf("<infinite>	");
+	else {
+		lim = limit.rlim_cur;
+		printf("%10lld	", lim);
+	}
+	if (RLIM_INFINITY == limit.rlim_max)
+		printf("<infinite>");
+	else {
+		lim = limit.rlim_max;
+		printf("%10lld	", lim);
+	}
+	putchar((int)'\n');
+}
+
+```
 
 -------------------------------------------------------------------
 ## 8. 习题
@@ -457,4 +519,5 @@ main (int argc, char *argv[])
 ```
 ![](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/images/chapter7/7.1.png)
 
-
+**习题 7.7**
+Q: size 
