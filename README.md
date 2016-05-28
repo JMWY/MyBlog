@@ -2,8 +2,6 @@
 
 *create time　2016-5-21*　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　**Practical First !**     
 
-        
-
 -------------------------------------------
 ## 1. booklist
     1. AdvancedProgrammingInTheUnixEnvironment_v3   # 《 Unix 环境高级编程（第三版）》  
@@ -16,7 +14,6 @@
 
 <br />
 
-----------------------------------------
 
 ## 2. reading and writing blogs
 <h4 id="b1"></h4>
