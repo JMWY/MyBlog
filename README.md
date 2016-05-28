@@ -9,8 +9,8 @@
 ----------------------------------------
 ## 2. Reading Plan —— (blogs)
 ### Unix 环境高级编程(第二版)  
-- [第七章：进程环境](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/chapter7_process_environment.md)     <br />         ［id=1］［2016/5/22 — 2016/5/28］［`completed`］       
-- [第十三章：守护进程](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/chapter13_daemon_processes.md)  <br />        ［id=2］［2016/5/29 — 2016/6/5］［**uncompleted**］
+- [第七章：进程环境](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/chapter7_process_environment.md)　　　　　　［id=1］［2016/5/22 — 2016/5/28］［`completed`］       
+- [第十三章：守护进程](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/chapter13_daemon_processes.md)　　　　　　［id=2］［2016/5/29 — 2016/6/5］［**uncompleted**］
         
         
 <br />
