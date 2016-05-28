@@ -3,12 +3,12 @@
 
 -------------------------------------------
 ## 1. booklist
-    1. AdvancedProgrammingInTheUnixEnvironment_v2   #<Unix 环境高级编程(第二版)>  
+    1. AdvancedProgrammingInTheUnixEnvironment_v2   #<Unix 环境高级编程(第三版)>  
     2. UnderstandTheLinuxKernel_v3   #<深入理解 Linux 内核(第三版)>
 
 ----------------------------------------
 ## 2. Reading Plan —— (blogs)
-### Unix 环境高级编程(第二版)  
+### Unix 环境高级编程(第三版)  
 | ID   | title | write time | state | create time|
 | :--- | :---  | :-------: | :---: | :--------: |
 | 1 | [第七章：进程环境](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v2/chapter7_process_environment.md) | 2016.5.22 ~ 2016.5.28 | `completed` | 2016.5.21
