@@ -11,6 +11,7 @@
 
 1. 检索架构
 2. 云计算架构 
+
 		a. nova		
 		b. devstack | openstack		
 		c. libvirt		
