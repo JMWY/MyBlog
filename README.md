@@ -21,7 +21,10 @@
 | ID   | title | write time | state | create time|
 | :--- | :---  | :-------: | :---: | :--------: |
 | 1 | [第七章：进程环境](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v3/chapter7_process_environment.md) | 2016.05.22 ~ 2016.05.28 | `completed` | 2016.05.21
-| 2 | [第十三章：守护进程](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v3/chapter13_daemon_processes.md) | 2016.05.29 ~ 2016.06.05 | **ongoing** | 2016.05.28
+| 2 | [第十三章：守护进程](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v3/chapter13_daemon_processes.md) | 2016.05.29 ~ 2016.06.05 | **ongoing** | 2016.05.28      
+| 3 | [第九章：进程关系](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v3/chapter13_daemon_processes.md) | 2016.06.6 ~ 2016.06.12 | **ongoing** | 2016.06.05
+
+
         
         
 <br />
