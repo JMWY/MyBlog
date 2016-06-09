@@ -36,7 +36,8 @@
 ###### C shell: csh 
 * c shell (csh) 
 * tc shell (tcsh) 
-* korn shell (ksh) 
+* korn shell (ksh)              
+
 ###### 查看 shell 方法
 1. echo $0
 2. ps | grep $$ 
