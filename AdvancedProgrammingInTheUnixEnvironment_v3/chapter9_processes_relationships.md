@@ -18,6 +18,19 @@
         user ID: 调用 setuid 设自身(`login`)为 user ID，Then invoke our login shell, as in
             execl("/bin/sh", "-sh", (char *)0);
 
+### shell 类型：
+###### B shell: sh 
+* burne shell (sh) 
+* burne again shell (bash) 
+###### C shell: csh 
+* c shell (csh) 
+* tc shell (tcsh) 
+* korn shell (ksh) 
+###### 查看 shell 方法
+1. echo $0
+2. ps | grep $$ 
+3. echo $SHELL
+
 
 ## 2. 网络登录
 
