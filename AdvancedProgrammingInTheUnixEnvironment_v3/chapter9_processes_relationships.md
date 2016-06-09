@@ -10,13 +10,13 @@
 * `login` 调用 `getpwnam` 取得该用户的**口令文件登录项**，然后调 `getpass`  输出 **"Password: "**，调用 `crypt` 加密口令，然后与所得的**口令文件登录项**的 `pw_passwd` 字段比较。若几次都无效，则调用 `exit(1)`，父进程（`init`）再次调用 `fork` 执行 `getty`。
 * `login` 在登陆后，执行如下 Change：       
 
-    dirctory: Change to our home directory (chdir)    
-    ownership: chown user:user our `terminal device`   
-    access permissions: can read && write can our terminal device     
-    group IDs:  调用 setgid and initgroups    
-    environment: our home directory (HOME), shell (SHELL), user name (USER and LOGNAME), and a default path (PATH)      
-    user ID: 调用 setuid 设自身(`login`)为 user ID，Then invoke our login shell, as in
-  `execl("/bin/sh", "-sh", (char *)0);`
+        dirctory: Change to our home directory (chdir)    
+        ownership: chown user:user our terminal device   
+        access permissions: can read && write can our terminal device     
+        group IDs:  调用 setgid and initgroups    
+        environment: our home directory (HOME), shell (SHELL), user name (USER and LOGNAME), and a default path (PATH)      
+        user ID: 调用 setuid 设自身(`login`)为 user ID，Then invoke our login shell, as in
+            execl("/bin/sh", "-sh", (char *)0);
 
 
 ## 2. 网络登录
