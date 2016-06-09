@@ -1,7 +1,7 @@
 # 进程关系
 ## 1. 终端登录
 ### BSD 终端登录
-
+![login_invoked](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v3/images/chapter9/login_invoked.PNG)
 
 
 ## 2. 网络登录
