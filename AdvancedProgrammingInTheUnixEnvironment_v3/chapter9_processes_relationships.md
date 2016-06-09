@@ -23,7 +23,7 @@
 ![终端登录后的进程安排](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v3/images/chapter9/process-arrage_after_login.PNG)
 
 - `login shell` is running now， 父进程为 `init`(ID： 1) 。所以登录 `shell` 终端时，`init` 接收到信号 `SIGCHLD`，将 `login shell` 的文件描述符 0、1 和 2 设为（`set to`）终端设备。
-- `login shell` reads its `start-up files` now. (**所以可以用启动文件配置用户的环境变量**)                 
+- `login shell` reads its `start-up files` now. `【所以可以用启动文件配置用户的环境变量】` 最后，打印 shell 提示符。                  
 (`.profile` for `Bourne shell` and `Korn SHell`)                        
 (`.bash_profile`, `.bash_login`, or `.profile` for `GNU Bourne-again shell`)                    
 (`.cshrc` and `.login` for the `C shell`)                       
