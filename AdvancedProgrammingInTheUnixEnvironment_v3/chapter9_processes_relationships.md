@@ -28,7 +28,7 @@
 (`.bash_profile`, `.bash_login`, or `.profile` for `GNU Bourne-again shell`)                    
 (`.cshrc` and `.login` for the `C shell`)                       
 
-#### (JMWY append) shell 类型：
+#### (Complement by JMWY) shell 类型：
 ###### B shell: sh 
 * burne shell (sh) 
 * burne again shell (bash) 
