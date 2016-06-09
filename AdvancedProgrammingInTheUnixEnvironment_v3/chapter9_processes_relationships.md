@@ -18,6 +18,8 @@
         user ID: 调用 setuid 设自身(`login`)为 user ID，Then invoke our login shell, as in
             execl("/bin/sh", "-sh", (char *)0);
 
+------------------------------------------
+
 ![终端登录后的进程安排](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v3/images/chapter9/process-arrage_after_login.PNG)
 
 - `login shell` is running now， 父进程为 `init`(ID： 1) 。所以登录 `shell` 终端时，`init` 接收到信号 `SIGCHLD`，将 `login shell` 的文件描述符 0、1 和 2 设为（`set to`）终端设备。
