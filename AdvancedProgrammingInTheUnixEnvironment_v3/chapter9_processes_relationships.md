@@ -46,7 +46,29 @@
 
 ## 2. 网络登录
 
+
 ## 3. 进程组
+**A process group is a collection of one or more processes, usually associated with the same job，that can receive signals from the same terminal. And each process belongs to a process group.**
+
+头文件 [unistd.h](http://pubs.opengroup.org/onlinepubs/7908799/xsh/unistd.h.html) 定义的相关函数:
+
+```c
+        #include <unistd.h>
+        pid_t getpgrp(void);  // RETURN: 其进程组ID
+        pid_t getpgid(pid_t pid);  // RETURN: SUCCESS, 进程组ID；ERROR, -1
+        /* getpgid(0) <==> getpgrp() */
+        
+        int setpgid(pid_t pid, pid_t pgid);  // RETURN: SUCCESS, 0; ERROR, -1
+```
+`setpgid`: 设置 `pid 进程` 的进程组ID为 `pgid`.
+* pid = pgid 时，`pid 进程`成为进程组**组长(leader)**。
+* pid = 0 时， 使用**调用者**的进程ID.
+* pgid = 0 时，pid 进程ID 成为进程组ID.
+
+**Note:**
+* 进程只能为`自己`或其`子进程` 设置`进程组ID`. 其子进程调用 `exec` 函数之一后，它就`不能`改变子进程的进程组ID.
+* `fork` 后调用此函数，父子进程中都应该设置该子进程的进程组ID, 防止因父子进程运行先后次序不确定会产生的竞争。
+
 
 ## 4. 会话
 
