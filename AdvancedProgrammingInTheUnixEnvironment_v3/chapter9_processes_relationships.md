@@ -5,7 +5,7 @@
 
 * `init` 进程 read `/etc/ttys`，对每个允许登录的终端设备(tty), 调用一次 `fork`，自进程执行 `(exec) getty`。
 * `getty` 调用 `open`，读写方式打开终端设备,设置文件描述符 0、1、2，然后输出 **login: **, 等待用户输入用户名。用户键入用户名后，调用：       
-        `execle("/bin/login", "login", "-p", username, (char*)0, envp);`
+　　　　`execle("/bin/login", "login", "-p", username, (char*)0, envp);`
 * 进程ID 不会因 `exec` 改变，图中底部三个进程：ID相同，父进程ID 为 1。最初的 init 父进程ID 0。
 * `login` 调用 `getpwnam` 取得该用户的**口令文件登录项**，然后调 `getpass`  输出 **Password: **，调用 `crypt` 加密口令，然后与所得的**口令文件登录项**的 `pw_passwd` 字段比较。若几次都无效，则调用 `exit(1)`，父进程（`init`）再次调用 `fork` 执行 `getty`。
 * `login` 在登陆后，执行如下 Change：       
