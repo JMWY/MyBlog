@@ -65,7 +65,7 @@
 <br />
 **超量恢复原理图**
 
-![超量恢复原理](http://img.baidu.com/img/iknow/r/image/2013-12-24/1b91d5c581d89e990a5eb26144bbbab3.png)
+![超量恢复原理](https://github.com/JMWY/MyBlog/blob/master/MyLifeNodes/images/exercise.png)
 
 目前所有的肌力训练方法和肌肉体积增大训练方法，基本都是根据这一理论延伸出来的。
 科学研究，最佳休息时间**大约48至72小时**。然后可以进行同类肌群的第二次训练。过早了容易产生过劳现象，超过72小时，超量恢复可能就过去了。
