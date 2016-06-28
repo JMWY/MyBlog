@@ -4,6 +4,7 @@
 * git clone https://git.openstack.org/openstack-dev/devstack
 
 #### create a sudo group user (cloudy for me)
+* sudo -i
 * adduser cloudy
 * echo "cloudy ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
