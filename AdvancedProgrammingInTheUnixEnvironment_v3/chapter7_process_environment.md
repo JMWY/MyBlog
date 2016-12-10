@@ -288,9 +288,9 @@ goto 语句可以实现**函数内调转**（常用于 `RETRY:` 和对（异常�
 	int setjmp(jmp_buf env); // RETURN: 直接调用, 0; 从 `longjmp` 调用， 非0.
 	void longjmp(jmp_buf env, int val);
 	
-	- `jmp_buf`: 数组，存放栈状态所有信息，在调用 `longjmp` 时用来恢复环境。
-	- `env`: 因为需在另一函数引用，所以规范处理应定义为全局变量。
-	- `val`: 存在的原因是一个 `setjmp` 可以有多个 `longjmp`。
+	-  　`jmp_buf`: 数组，存放栈状态所有信息，在调用 `longjmp` 时用来恢复环境。
+	- 　 `env`: 因为需在另一函数引用，所以规范处理应定义为全局变量。
+	- 　 `val`: 存在的原因是一个 `setjmp` 可以有多个 `longjmp`。
 
 **应用环境示例：**
 	
