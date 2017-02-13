@@ -40,7 +40,35 @@ ENABLED_SERVICES+=,rabbit,tempest,mysql
 ```
 
 
+#### [if want to extend compute node(s), use configure file(local.conf) as below]
 
+```c
+[[local|localrc]]
+HOST_IP=192.168.110.154
+DEST=/opt/stack
+LOGFILE=/opt/stack/logs/stack.sh.log
 
+MULTI_HOST=1
 
+ADMIN_PASSWORD=root
+MYSQL_PASSWORD=root
+RABBIT_PASSWORD=root
+SERVICE_PASSWORD=root
+SERVICE_TOKEN=root
+
+# Service information
+SERVICE_HOST=192.168.110.151
+MYSQL_HOST=$SERVICE_HOST
+RABBIT_HOST=$SERVICE_HOST
+GLANCE_HOSTPORT=$SERVICE_HOST:9292
+Q_HOST=$SERVICE_HOST
+KEYSTONE_AUTH_HOST=$SERVICE_HOST
+KEYSTONE_SERVICE_HOST=$SERVICE_HOST
+
+disable_all_services
+
+# core compute (glance / keystone / nova (+ nova-network))
+ENABLED_SERVICES=n-cpu,n-net
+
+```
 
