@@ -27,10 +27,18 @@
 | 3 | [第九章：进程关系](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v3/chapter9_processes_relationships.md) | 2016.06.6 ~ 2016.06.12 | **ongoing** | 2016.06.05
 | 3 | [第10章：信号](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v3/chapter10_signal.md) | 2016.06.13 ~ 2016.06.26 | **ongoing** | 2016.06.12
 
-        
-        
 <br />
 <br />
+
+#### 设计模式（designer pattern） 
+
+| ID   | title | write time | state | create time|
+| :--- | :---  | :-------: | :---: | :--------: |
+| 1 | [单例模式（singleton）](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v3/chapter7_process_environment.md) | 2016.03.23 | `completed` | 2016.03.23
+| 2 |  |  | | 
+
+
+        
 <br />
 
 ------------------------------------------------------
