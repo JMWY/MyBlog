@@ -186,7 +186,9 @@ private:
 class Demo: public Singleton<Demo> {
     friend class Singleton<Demo>;
 public:
-    void print() { cout << "pid_t: " << pthread_self() << "\tsingleton: " << this << "\tuniq_val:" << ++uniq_val << endl; }          protected:
+    void print() { cout << "pid_t: " << pthread_self() << "\tsingleton: " 
+                    << this << "\tuniq_val:" << ++uniq_val << endl; }
+protected:
     Demo1(): uniq_val(0) {}
 private:
     int uniq_val;
