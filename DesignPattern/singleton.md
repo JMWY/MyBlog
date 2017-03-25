@@ -234,3 +234,5 @@ int main()
 }
 
 ```
+
+![运行结果](https://github.com/JMWY/MyBlog/blob/master/DesignPattern/imgates/singleton.png)
