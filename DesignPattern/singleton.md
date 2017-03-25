@@ -173,3 +173,62 @@ private:
 
 ## 3. 各种实现的对比
 
+| 实现          |  优缺点     |
+| :-----:       | :---------: |
+| 饿汉式 (用栈) | 优点：绝对线程安全;缺点：假如工厂模式，会缓存很多实例，影响效率;无法根据参数创建实例 |
+| 懒汉式 (用堆) | 优点：延迟加载,动态创建；缺点：需要同步，引入额外空间                                |
+| 懒汉式(用栈)  | 绝对线程安全，并且是动态创建 <推荐>                                                  |
+
+
+**线程安全**和**空间释放情况**测试：
+
+```c
+class Demo: public Singleton<Demo> {
+    friend class Singleton<Demo>;
+public:
+    void print() { cout << "pid_t: " << pthread_self() << "\tsingleton: " << this << "\tuniq_val:" << ++uniq_val << endl; }          protected:
+    Demo1(): uniq_val(0) {}
+private:
+    int uniq_val;
+};
+
+#define THREAD_FUN_IMPL(n)                       \
+    void *thread ## n (void * arg) {             \
+        for (int i = 0; i < 5; ++i) {            \
+            pthread_mutex_lock(&g_mutex);        \
+            Demo ## n::Instance()->print();      \
+            pthread_mutex_unlock(&g_mutex);      \
+            usleep(1);                           \
+        }                                        \
+    }
+
+THREAD_FUN_IMPL(1)
+THREAD_FUN_IMPL(2)
+THREAD_FUN_IMPL(3)
+THREAD_FUN_IMPL(4)
+
+pthread_mutex_t g_mutex;
+
+int main()
+{
+    pthread_t pid11, pid12, pid2, pid3, pid4;
+    pthread_mutex_init(&g_mutex, NULL);
+    cout << "TEST-lazy-1: (if multi-threads safe)---------------------- " << endl;
+    pthread_create(&pid11, NULL, thread1, NULL);
+    pthread_create(&pid12, NULL, thread1, NULL);
+    pthread_join(pid11, NULL);
+    pthread_join(pid12, NULL);
+
+    cout << "TEST-lazy-stack, hungry, lazy-2 pattern---------------------- " << endl;
+    pthread_create(&pid2, NULL, thread2, NULL);
+    pthread_create(&pid3, NULL, thread3, NULL);
+    pthread_create(&pid4, NULL, thread4, NULL);
+
+    pthread_join(pid2, NULL);
+    pthread_join(pid3, NULL);
+    pthread_join(pid4, NULL);
+    pthread_mutex_destroy(&g_mutex);
+    return 0;
+}
+
+```
