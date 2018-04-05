@@ -41,10 +41,10 @@ char randomChoseOneData(const char *s) {
 template<class T>
 int randomChoseKData(const std::vector<T>& data_set, int k, std::vector<T>& chose_data_set)
 {
-    srand(time(NULL));
     size_t n = data_set.size();
     if (k < 0) return -1;
     if (n < k) return -2;
+    srand(time(NULL));
     chose_data_set.clear();
     chose_data_set.reserve(k);
     for (size_t i = 0; i < data_set.size(); ++i) {
