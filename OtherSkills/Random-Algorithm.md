@@ -27,3 +27,33 @@ char randomChoseOneData(const char *s) {
     return chose_data;
 }
 ```
+* 应用场景：数量量未知的数据流、有效内容不清楚的信息等
+
+### 2. 随机选择 m 个数（数据总量为 n，数据被选中的概率相等）
+* 分析：
+第 1 个数的概率为 m/n, 不被选中的概率是 (n-m)/n.
+第 2 个数的概率为 (m/n)*((m-1)/(n-1)) + ((n-m)/n) * (m/(n-1)) = m/n
+...
+```
+#include <stdlib.h>
+#include <vector>
+
+template<class T>
+int randomChoseKData(const std::vector<T>& data_set, int k, std::vector<T>& chose_data_set)
+{
+    srand(time(NULL));
+    size_t n = data_set.size();
+    if (k < 0) return -1;
+    if (n < k) return -2;
+    chose_data_set.clear();
+    chose_data_set.reserve(k);
+    for (size_t i = 0; i < data_set.size(); ++i) {
+        if(rand() % n < k) {
+            chose_data_set.push_back(data_set[i]);
+            k--;
+        }
+        n--;
+    }
+    return 0;
+}
+```
