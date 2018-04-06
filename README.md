@@ -37,6 +37,15 @@
 | 1 | [单例模式（singleton）](https://github.com/JMWY/MyBlog/blob/master/DesignPattern/singleton.md) | 2016.03.23 | `completed` | 2016.03.23
 | 2 |  |  | | 
 
+<br />
+<br />
+
+#### 算法（algorithm） 
+
+| ID   | title | write time | state | create time|
+| :--- | :---  | :-------: | :---: | :--------: |
+| 1 | [随机算法](https://github.com/JMWY/MyBlog/blob/master/OtherSkills/Random-Algorithm.md) | 2018.04.07 | `completed` | 2018.04.07
+| 2 |  |  | | 
 
         
 <br />
