@@ -28,7 +28,6 @@
 | 3 | [第10章：信号](https://github.com/JMWY/MyBlog/blob/master/AdvancedProgrammingInTheUnixEnvironment_v3/chapter10_signal.md) | 2016.06.13 ~ 2016.06.26 | **ongoing** | 2016.06.12
 
 <br />
-<br />
 
 #### 设计模式（designer pattern） 
 
@@ -37,7 +36,6 @@
 | 1 | [单例模式（singleton）](https://github.com/JMWY/MyBlog/blob/master/DesignPattern/singleton.md) | 2016.03.23 | `completed` | 2016.03.23
 | 2 |  |  | | 
 
-<br />
 <br />
 
 #### 算法（algorithm） 
