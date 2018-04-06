@@ -27,7 +27,7 @@ char randomChoseOneData(const char *s) {
     return chose_data;
 }
 ```
-* 应用场景：数量量未知的数据流、有效内容不清楚的信息等
+* 应用场景：数量量未知的数据流、有效内容不清楚的信息、蓄水池抽样等
 
 ### 2. 随机选择 k 个数（数据总量为 n，数据被选中的概率相等）
 * 分析：<br/>
@@ -57,6 +57,8 @@ int randomChoseKData(const std::vector<T>& data_set, int k, std::vector<T>& chos
     return 0;
 }
 ```
+* 应用场景：蓄水池抽样等
+
 
 ### 3. 随机选择 k 个数（数据总量未知，数据被选中的概率相等）
 * 方法:<br/>
@@ -95,8 +97,10 @@ int randomChoseKData(const std::vector<T>& data_set, int k, std::vector<T>& chos
 
 ## B. 随机排列
 
-### 1. 数组完全随机排列（（每组排列的概率为: 1/(n!)）
+### 1. 数组完全随机排列（数组大小为 n）
+
 * Knuth-Durstenfeld Shuffle (时间: O(n), 空间: O(1))
+
 ```
 RANDOMIZE-IN-PLACE ( A , n ) for i ← 1 to n do swap A[i] ↔ A[RANDOM(i , n )]
 ```
@@ -111,18 +115,48 @@ void shuffle(std::vector<T>& data) {
     srand(time(NULL));
     size_t n = data.size();
     while (n > 0) {
-        size_t i = rand() % n;                                                                                        
+        size_t i = rand() % n;
         if (--n != i) {
             std::swap(data[n], data[i]);
-        }   
-    }   
+        }
+    }
 }
 ```
 
+* 应用场景： 知道总牌数的洗牌算法等。
 
+### 2. 数组完全随机排列（数组大小未知）
 
+* Inside-Out Algorithm（时间：O(k), 空间: O(1)， k 为出现的数据量）
 
-### 2. 洗牌算法（）
+* 方法:<br/>
+用新数组保存每个出现的数据。当有新数据出现时，保存新数据后，再从全部历史数据中随机抽一个和新数据互换位置。
+
+* 证明:<br/>
+当全部 k 个元素出现完毕时，
+1. 第 i 个元素放在前 i 个位置的概率为：(1/i)*(i/(i+1))*((i+1)/(i+2))*...*((k-1)/k) = 1/k.  
+2. 第 i 个元素放在第 j(j>i) 位置的概率为：(1/j)*(j/(j+1))*...*((k-1)/k) = 1/k.  
+
+```
+#include <stdlib.h>
+#include <vector>
+#include <algorithm>
+
+template <typename T>
+void shuffle(std::vector<T>& data, size_t k, std::vector<T>& result) {
+    srand(time(NULL));
+    for (size_t i = 0; i < std::min(k, data.size()); ++i) {
+        result.push_back(data[i]);
+        int j = rand() % (i + 1);
+        if (j != i) {
+            result[i] = result[j];
+            result[j] = data[i];
+        }
+    }
+} 
+```
+
+* 应用场景： 数量未知的洗牌 (即：来一张，洗一张)。
 
 
 
