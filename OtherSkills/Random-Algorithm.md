@@ -93,10 +93,32 @@ int randomChoseKData(const std::vector<T>& data_set, int k, std::vector<T>& chos
 ```
 
 
-
 ## B. 随机排列
 
 ### 1. 数组完全随机排列（（每组排列的概率为: 1/(n!)）
+* Knuth-Durstenfeld Shuffle (时间: O(n), 空间: O(1))
+```
+RANDOMIZE-IN-PLACE ( A , n ) for i ← 1 to n do swap A[i] ↔ A[RANDOM(i , n )]
+```
+* 证明：<br/>
+1. 对任一个元素，放在位置 1 的位置的概率为 1/n ， 放在位置 2 的概率为 ((n-1)/n)*（1/(n-1)）=1/n, 放在位置 3 的概率 ..., 得出任一元素放在任一位置的概率都为 1/n.
+2. 位置 1 从 n 个元素中选，有 n 种可能，位置 2 从剩下的 n-1 个元素中选，有 n-1 种可能，位置 3 ....,得出总共可能得到的排列数为: n*(n-1)*(n-2)*...*1 = n! 种 。正好为 n 个数的全排列数。
+由上两条得证。
+
+```
+template <typename T>
+void shuffle(std::vector<T>& data) {
+    srand(time(NULL));
+    size_t n = data.size();
+    while (n > 0) {
+        size_t i = rand() % n;                                                                                        
+        if (--n != i) {
+            std::swap(data[n], data[i]);
+        }   
+    }   
+}
+```
+
 
 
 
