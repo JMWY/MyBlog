@@ -127,7 +127,7 @@ void shuffle(std::vector<T>& data) {
 
 ### 2. 数组完全随机排列（数组大小未知）
 
-* Inside-Out Algorithm（时间：O(k), 空间: O(1)， k 为出现的数据量）
+* Inside-Out Algorithm（时间：O(k), 空间: O(n)， k 为出现的数据量）
 
 * 方法:<br/>
 用新数组保存每个出现的数据。当有新数据出现时，保存新数据后，再从全部历史数据中随机抽一个和新数据互换位置。
