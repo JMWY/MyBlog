@@ -132,6 +132,7 @@ static void my_exit2(void)
 
 ### C程序启动与终止图	
 <br />
+
 ![C程序启动与终止](https://raw.githubusercontent.com/JMWY/MyBlog/master/AdvancedProgrammingInTheUnixEnvironment_v3/images/chapter7/C%E7%A8%8B%E5%BA%8F%E5%90%AF%E5%8A%A8%E4%B8%8E%E7%BB%88%E6%AD%A2.PNG)
 
 
@@ -195,7 +196,8 @@ static void my_exit2(void)
 <h2 id="4"></h2>
 
 ## 4. 共享库
-**共享库**： 运行时加载的动态链接库(.so文件)。		
+**共享库**： 运行时加载的动态链接库(.so文件)。<br/>
+
 **优点**：
 - 减少可执行文件长度（不用包含公用的**库例程**）
 - 库函数**新版本**可直接代替**老版本**使用（无需重新编译和链接相关的**可执行程序**）
