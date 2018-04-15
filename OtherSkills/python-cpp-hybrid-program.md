@@ -174,7 +174,7 @@ setup(
 #### more about [SWIG and C++11](http://www.swig.org/Doc3.0/CPlusPlus11.html#CPlusPlus11)
 
 
-## [C/C++ 调用 Python](https://www.zhihu.com/question/23003213)
+## 3. [C/C++ 调用 Python](https://www.zhihu.com/question/23003213)
 
 
 
