@@ -53,7 +53,7 @@
 
 | ID   | title | write time | state | create time|
 | :--- | :---  | :-------: | :---: | :--------: |
-| 1 | [python & C++ 混合编程]()
+| 1 | [python & C++ 混合编程](https://github.com/JMWY/MyBlog/blob/master/OtherSkills/python-cpp-hybrid-program.md)| 2018.04.15 | `completed` | 2018.04.15 |
 | 2 |  |  | | 
 
 <br />
