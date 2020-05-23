@@ -34,7 +34,7 @@
 | ID   | title | write time | state | create time|
 | :--- | :---  | :-------: | :---: | :--------: |
 | 1 | [单例模式（singleton）](https://github.com/JMWY/MyBlog/blob/master/DesignPattern/singleton.md) | 2016.03.23 | `completed` | 2016.03.23
-| 2 |  |  | | 
+| 2 | [线程池模式与并行计算] |  2020.05.24 | `ongoing` | 2020.05.24
 
 <br />
 
@@ -61,8 +61,9 @@
 
 ------------------------------------------------------
 
-Auther: Yangguang Li  
-Email : liyg12@mails.tsinghua.edu.cn 
+Auther: Yangguang Li 
+Email : liyggyj@163.com 
+[//]: <> (Email : liyg12@mails.tsinghua.edu.cn) 
 
 
 
