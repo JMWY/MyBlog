@@ -1,5 +1,6 @@
 # 判断点和多边形关系
 
+射线法判断点是否在多边形内
 ```c
 
 bool SpatialUtil::isWithIn(float srcLat, float srcLng,
@@ -51,3 +52,39 @@ bool SpatialUtil::isWithIn(float srcLat, float srcLng,
 }
 
 ```
+点是否在矩形内
+```c
+bool SpatialUtil::isWithIn(float srcLat, float srcLng,
+                            float dstLtLat, float dstLtLng, float dstRbLat, float dstRbLng)
+{
+    if ((srcLat <= dstLtLat) &&
+        (srcLng >= dstLtLng) &&
+        (srcLat >= dstRbLat) &&
+        (srcLng <= dstRbLng))
+        return true;
+    return false;
+}
+
+```
+
+地球经纬度计算距离
+```c
+#define PI 3.1415926535898
+#define rad(d) (d*PI/180.0)
+#define EARTH_RADIUS 6378.137                                                                                                                          
+
+HA3_LOG_SETUP(amap, SpatialUtil);
+
+float SpatialUtil::calcSpatial(float srcLat, float srcLng,
+                                 float dstLat, float dstLng)
+{
+    double latDis = rad(srcLat) - rad(dstLat);
+    double lonDis = rad(srcLng) - rad(dstLng);
+    double s = 2 * asin(sqrt(pow(sin(latDis/2), 2) + cos(rad(srcLat)) * cos(rad(dstLat))
+               * pow(sin(lonDis/2), 2))) * EARTH_RADIUS;
+    s = round(s * 10000) / 10000;
+    return s;
+}
+
+```
+
