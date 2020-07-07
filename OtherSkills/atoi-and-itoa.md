@@ -1,16 +1,16 @@
 # 数字和字符串之间的转换
 
 ## atoi
-相关函数：atoi，atol，strtod，strtol, stroul
-头文件： #include <stdlib.h>
+* 相关函数：atoi，atol，strtod，strtol, stroul
+* 头文件： #include <stdlib.h>
 
 
 
 
 
 ## itoa
-相关函数：gcvt，ecvt，fcvt，sprintf，std::to_string, std::stringstream(类)
-* linux 没有 itoa 这个函数
+* 相关函数：gcvt，ecvt，fcvt，sprintf，std::to_string, std::stringstream(类) 
+* glibc 没有 itoa 这个函数
 
 ```c
 #include <sstream>
