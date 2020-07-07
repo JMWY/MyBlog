@@ -10,6 +10,7 @@
 
 ## itoa
 相关函数：gcvt，ecvt，fcvt，sprintf，std::to_string, std::stringstream(类)
+* linux 没有 itoa 这个函数
 
 ```c
 #include <sstream>
