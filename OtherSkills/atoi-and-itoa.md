@@ -139,6 +139,6 @@ int main(int argc, char **argv) {
     }
 }
 ```
-![avatar](https://github.com/JMWY/MyBlog/blob/master/OtherSkills/images/itoa_benchmark.png "benchmark")
+![](https://github.com/JMWY/MyBlog/blob/master/OtherSkills/images/itoa_benchmark.png "benchmark")
 
 
