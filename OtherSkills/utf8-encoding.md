@@ -155,9 +155,9 @@ int main(int argc, char *argv[])
 }
 ```
 
-参考资料：
-http://userguide.icu-project.org/ (icu： International Components for Unicode)
-https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/（字符集基本知识）
-https://www.ietf.org/rfc/rfc3629.txt
- http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html  (unicode 和 utf-8)
+## 参考资料：
+* http://userguide.icu-project.org/ (icu： International Components for Unicode)
+* https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/（字符集基本知识）
+* https://www.ietf.org/rfc/rfc3629.txt
+* http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html  (unicode 和 utf-8)
 
