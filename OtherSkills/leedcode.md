@@ -1,12 +1,5 @@
 # LeedCode 梳理
 
-| 编号  | 题目      |题解             |  地址 |  
-|:--:|:--:|:--:|:--:|
-|a||b|
-| 1|A|B|C|
-
-# leetcode
-
 ## 字符串类
 
 
@@ -33,8 +26,8 @@
 
 <details>
 <summary> 1. 稀疏相似度 (倒排索引) （https://leetcode-cn.com/problems/sparse-similarity-lcci/） </summary> 
-地址：https://leetcode-cn.com/problems/sparse-similarity-lcci/ 
 
+题解：
 ```bash
 class Solution {
 public:
@@ -73,6 +66,53 @@ public:
     }
 };
 ``` 
+
+超时题解（O(n^2*m)）：
+```c++
+class Solution {
+public:
+    string compare2DocSimilarity(vector<int>& short_doc, size_t short_id, vector<int>& long_doc, size_t long_id) {
+        if (short_doc.size() > long_doc.size()) return compare2DocSimilarity(long_doc, long_id, short_doc, short_id);
+        string res("");
+        if (short_doc.empty()) return res;
+        unordered_set<int> short_set;
+        for (size_t id = 0; id < short_doc.size(); ++id) short_set.insert(short_doc[id]);
+        size_t intersection_num = 0;
+        size_t unionsection_num = short_set.size();
+        for (size_t id = 0; id < long_doc.size(); ++id) {
+            if (short_set.find(long_doc[id]) != short_set.end()) {
+                ++intersection_num;
+            } else {
+                ++unionsection_num;
+            }
+        }
+        double similarity = double(intersection_num) / double(unionsection_num);
+        if (similarity < 0.00005f) return res;
+        char buffer[256];
+        size_t min_id = min(short_id, long_id);
+        size_t max_id = max(short_id, long_id);
+        int n = snprintf(buffer, 256, "%lu,%lu: %.4f", min_id, max_id, similarity+1e-9);
+        if (0 < n && n < 256) {
+            buffer[n] = '\0';
+        }
+        return buffer;
+    }
+
+    vector<string> computeSimilarities(vector<vector<int>>& docs) {
+        vector<string> res;
+        for (size_t m = 0; m < docs.size(); ++m) {
+            for (size_t n = m+1; n < docs.size(); ++n) {
+                string cmp_str = compare2DocSimilarity(docs[m], m, docs[n], n);
+                if (!cmp_str.empty()) {
+                    res.push_back(cmp_str);
+                }
+            }
+        }
+        return res;
+
+    }
+};
+```
 
 </details>
 
