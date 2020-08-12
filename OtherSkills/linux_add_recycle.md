@@ -91,3 +91,5 @@ alias rm='/usr/bin/myrm.sh'
 # save 3 days
 ls -ld   ${HOME}/.recycle/* 2>/dev/null |grep "^d"|awk '{print $NF}'|head -n-3|xargs /bin/rm -rf  &>/dev/null
 ```
+
+
