@@ -1,4 +1,4 @@
-# python  多进程并发 diff 脚本
+# python  多进程并发做 diff 的脚本工具
 
 ## A 
 ```python
