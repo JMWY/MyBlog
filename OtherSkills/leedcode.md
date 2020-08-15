@@ -2,8 +2,30 @@
 
 ## 字符串类
 <details>
-<!--summary> x.  ()（） </summary--> 
+<summary> 1. 验证回文串 (easy)（https://leetcode-cn.com/problems/valid-palindrome/） </summary> 
 </details>
+
+<details>
+<summary> 2. 分割回文串 (medium)（https://leetcode-cn.com/problems/palindrome-partitioning/） </summary> 
+</details>
+
+<details>
+<summary> 3. 单词拆分 (medium)（https://leetcode-cn.com/problems/word-break/） </summary> 
+</details>
+
+<details>
+<summary> 4. 单词拆分 II (hard)（https://leetcode-cn.com/problems/word-break-ii/） </summary> 
+</details>
+
+<details>
+<summary> 5. 单词搜索 II (hard)（https://leetcode-cn.com/problems/word-search-ii/） </summary> 
+</details>
+
+<details>
+<summary> 6. 实现 Trie (前缀树) (medium)（https://leetcode-cn.com/problems/implement-trie-prefix-tree/） </summary> 
+</details>
+
+
 
 ## 数组类
 <details>
