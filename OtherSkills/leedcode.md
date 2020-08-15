@@ -6,8 +6,109 @@
 ## 数组类
 
 
+
 ## 链表类
 
+<details>
+<summary> 1. 反转链表 （easy）（https://leetcode-cn.com/problems/reverse-linked-list/） </summary> 
+</details>
+
+<details>
+<summary> 2. 链表中倒数第k个节点 (easy)（https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/） </summary> 
+</details>
+
+<details>
+<summary> 3. 环形链表 (easy)（https://leetcode-cn.com/problems/linked-list-cycle/） </summary> 
+</details>
+
+<details>
+<summary> 4. 相交链表 (easy)（https://leetcode-cn.com/problems/intersection-of-two-linked-lists/） </summary> 
+</details>
+
+<details>
+<summary> 5. 回文链表 (easy)（https://leetcode-cn.com/problems/palindrome-linked-list/） </summary> 
+</details>
+
+<details>
+<summary> 6. 链表排序 (medium)（https://leetcode-cn.com/problems/sort-list/） </summary> 
+</details>
+
+<details>
+<summary> 7. 删除链表中的节点 (easy)（https://leetcode-cn.com/problems/delete-node-in-a-linked-list/） </summary> 
+</details>
+
+<details>
+<summary> 8. 奇偶链表 (medium)（https://leetcode-cn.com/problems/odd-even-linked-list/） </summary> 
+</details>
+
+<details>
+<summary> 9. 复杂链表的复制 (medium)（https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/） </summary> 
+</details>
+
+<details>
+<summary> 10. 设计链表 (medium)（https://leetcode-cn.com/problems/design-linked-list/） </summary> 
+</details>
+
+
+<details>
+<summary> 11. 分隔链表 (medium)（https://leetcode-cn.com/problems/split-linked-list-in-parts/） </summary> 
+</details>
+
+<details>
+<summary> 12. 分隔链表 (medium)（https://leetcode-cn.com/problems/partition-list/） </summary> 
+</details>
+
+<details>
+<summary> 13. 链表求和 (medium)（https://leetcode-cn.com/problems/sum-lists-lcci/） </summary> 
+</details>
+
+<details>
+<summary> 14. 重排链表 (medium)（https://leetcode-cn.com/problems/reorder-list/） </summary> 
+</details>
+
+<details>
+<summary> 15. 旋转链表 (medium)（https://leetcode-cn.com/problems/rotate-list/） </summary> 
+</details>
+
+<details>
+<summary> 16. 环形链表 II (medium)（https://leetcode-cn.com/problems/linked-list-cycle-ii/） </summary> 
+</details>
+
+<details>
+<summary> 17. 反转链表 II (medium)（https://leetcode-cn.com/problems/reverse-linked-list-ii/） </summary> 
+</details>
+
+<details>
+<summary> 18. 特定深度节点链表 (medium)（https://leetcode-cn.com/problems/list-of-depth-lcci/） </summary> 
+</details>
+
+<details>
+<summary> 19. 合并两个有序链表 (easy)（https://leetcode-cn.com/problems/merge-two-sorted-lists/） </summary> 
+</details>
+
+<details>
+<summary> 20. 合并K个升序链表 (hard)（https://leetcode-cn.com/problems/merge-k-sorted-lists/） </summary> 
+</details>
+
+<details>
+<summary> 21. 对链表进行插入排序 (medium)（https://leetcode-cn.com/problems/insertion-sort-list/） </summary> 
+</details>
+
+<details>
+<summary> 22. 链表的中间结点 (easy)（https://leetcode-cn.com/problems/middle-of-the-linked-list/） </summary> 
+</details>
+
+<details>
+<summary> 23. K 个一组翻转链表 (hard)（https://leetcode-cn.com/problems/reverse-nodes-in-k-group/） </summary> 
+</details>
+
+<details>
+<summary> 24. 扁平化多级双向链表 (medium)（https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list/） </summary> 
+</details>
+
+<details>
+<summary> 25. 从尾到头打印链表 (easy)（https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/） </summary> 
+</details>
 
 ## 树类
 
