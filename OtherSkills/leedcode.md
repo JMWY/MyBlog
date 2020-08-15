@@ -1,11 +1,17 @@
 # LeedCode 梳理
 
 ## 字符串类
-
+<details>
+<!--summary> x.  ()（） </summary--> 
+</details>
 
 ## 数组类
-
-
+<details>
+<summary> 1. 最大子段和 (easy)（https://leetcode-cn.com/problems/maximum-subarray/） </summary> 
+</details>
+<details>
+<summary> 2. 最大子矩阵 (hard)（https://leetcode-cn.com/problems/max-submatrix-lcci/） </summary> 
+</details>
 
 ## 链表类
 
@@ -112,15 +118,90 @@
 
 ## 树类
 
+<details>
+<summary> 1. 天际线问题 ()（https://leetcode-cn.com/problems/the-skyline-problem/） </summary> 
+</details>
+
 
 ### 二叉树类
+<details>
+<summary> 1. 二叉树的最近公共祖先 (medium)（https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/） </summary> 
+</details>
 
+<details>
+<summary> 2. 平衡二叉树 (easy)（https://leetcode-cn.com/problems/balanced-binary-tree/） </summary> 
+</details>
+
+<details>
+<summary> 3. 二叉搜索树的第k大节点  (easy)（https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/） </summary> 
+</details>
+
+<details>
+<summary> 4. 重建二叉树 (medium)（https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/） </summary> 
+</details>
+
+<details>
+<summary> 5. 二叉树的深度  (easy)（https://leetcode-cn.com/problems/er-cha-shu-de-shen-du-lcof/） </summary> 
+</details>
+
+<details>
+<summary> 6. 二叉树的序列化与反序列化  (hard)（https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/） </summary> 
+</details>
+
+<details>
+<summary> 7. 二叉搜索树与双向链表 (medium)（https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/） </summary> 
+</details>
+
+<details>
+<!--summary> x.  ()（） </summary--> 
+</details>
 
 ## 图类
+<details>
+<summary> 1. 岛屿数量 (medium)（https://leetcode-cn.com/problems/number-of-islands/） </summary> 
+</details>
+
+<details>
+<summary> 2. 课程表 (medium)（https://leetcode-cn.com/problems/course-schedule/） </summary> 
+</details>
+
+<details>
+<summary> 3. 课程表 II (medium)（https://leetcode-cn.com/problems/course-schedule-ii/） </summary> 
+</details>
+
+<details>
+<summary> 4. 单词接龙 (medium)（https://leetcode-cn.com/problems/word-ladder/） </summary> 
+</details>
+
+<details>
+<summary> 5. 判断二分图 (medium)（https://leetcode-cn.com/problems/is-graph-bipartite/） </summary> 
+</details>
+
+<details>
+<summary> 6. 项目管理 (hard)（https://leetcode-cn.com/problems/sort-items-by-groups-respecting-dependencies/） </summary> 
+</details>
+
+<details>
+<summary> 7. 正方形数组的数目 (hard)（https://leetcode-cn.com/problems/number-of-squareful-arrays/） </summary> 
+</details>
+
+<details>
+<summary> 8. 找到最终的安全状态 (medium)（https://leetcode-cn.com/problems/find-eventual-safe-states/ </summary> 
+</details>
+
+<details>
+<summary> 9. 概率最大的路径 (medium)（https://leetcode-cn.com/problems/path-with-maximum-probability/） </summary> 
+</details>
+
+<details>
+<summary> 10. 不邻接植花 (easy)（https://leetcode-cn.com/problems/flower-planting-with-no-adjacent/） </summary> 
+</details>
 
 
 ## 数学类
-
+<details>
+<!--summary> x.  ()（） </summary--> 
+</details>
 
 
 ## 数据结构类
