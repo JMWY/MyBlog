@@ -3,6 +3,23 @@
 ## 字符串类
 <details>
 <summary> 1. 验证回文串 (easy)（https://leetcode-cn.com/problems/valid-palindrome/） </summary> 
+    
+```cpp
+class Solution {
+public:
+    bool isPalindrome(const string& s) {
+        int left = 0;
+        int right = s.length() - 1;
+        while (left < right) {
+            while (left < right && !isalnum(s[left])) { ++left; }
+            while (left < right && !isalnum(s[right])) { --right; }
+            if (tolower(s[left]) != tolower(s[right])) { return false; }
+            ++left, --right;
+        }
+        return true;
+    }
+};
+``` 
 </details>
 
 <details>
