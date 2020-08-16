@@ -29,6 +29,47 @@
 <summary> 6. 字符串转换整数 (atoi) (medium)（https://leetcode-cn.com/problems/string-to-integer-atoi/） </summary> 
 </details>
 
+<details>
+<summary> 7. 翻转单词顺序 (easy)（https://leetcode-cn.com/problems/fan-zhuan-dan-ci-shun-xu-lcof/） </summary>
+    
+```cpp
+class Solution {
+public:
+    string reverseWords(string s) {
+        string res("");
+        bool is_blank_status = true;
+        size_t end = s.size();
+        for (int cur = s.size()-1; cur >= 0; --cur) {
+            if (is_blank_status && !isBlank(s[cur])) {
+                end = cur;
+                is_blank_status = false;
+            }
+            if (!is_blank_status && isBlank(s[cur])) {
+                if (!res.empty()) {
+                    res.push_back(' ');
+                }
+                res.append(s, cur+1, end - cur);
+                is_blank_status = true;
+            }
+        }
+        // not end with blank
+        if (!is_blank_status) {
+            if (!res.empty()) {
+                res.push_back(' ');
+            }
+            res.append(s, 0, end+1);
+        }
+        return res;
+    }
+    
+private:
+    bool isBlank(char c) const {
+        return ' ' == c;
+    }
+};
+```
+
+</details>
 
 ## 数组类
 <details>
