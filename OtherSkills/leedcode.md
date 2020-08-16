@@ -25,6 +25,9 @@
 <summary> 6. 实现 Trie (前缀树) (medium)（https://leetcode-cn.com/problems/implement-trie-prefix-tree/） </summary> 
 </details>
 
+<details>
+<summary> 6. 字符串转换整数 (atoi) (medium)（https://leetcode-cn.com/problems/string-to-integer-atoi/） </summary> 
+</details>
 
 
 ## 数组类
@@ -183,7 +186,7 @@
 ## 树类
 
 <details>
-<summary> 1. 天际线问题 ()（https://leetcode-cn.com/problems/the-skyline-problem/） </summary> 
+<summary> 1. 天际线问题 (hard)（https://leetcode-cn.com/problems/the-skyline-problem/） </summary> 
 </details>
 
 
