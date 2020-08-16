@@ -31,9 +31,51 @@
 <details>
 <summary> 1. 最大子段和 (easy)（https://leetcode-cn.com/problems/maximum-subarray/） </summary> 
 </details>
+
 <details>
 <summary> 2. 最大子矩阵 (hard)（https://leetcode-cn.com/problems/max-submatrix-lcci/） </summary> 
 </details>
+
+<details>
+<summary> 3. 乘积最大子数组 (medium)（https://leetcode-cn.com/problems/maximum-product-subarray/） </summary> 
+</details>
+
+<details>
+<summary> 4. 多数元素 (easy)（https://leetcode-cn.com/problems/majority-element/） </summary> 
+</details>
+
+<details>
+<summary> 5. 旋转数组 (easy)（https://leetcode-cn.com/problems/rotate-array/） </summary> 
+</details>
+
+<details>
+<summary> 6. 存在重复元素 II (easy)（https://leetcode-cn.com/problems/contains-duplicate-ii/） </summary> 
+</details>
+
+<details>
+<summary> 7. 存在重复元素 III (medium)（https://leetcode-cn.com/problems/contains-duplicate-iii/） </summary> 
+</details>
+
+<details>
+<summary> 8. 两个数组的交集 II (easy)（https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/） </summary> 
+</details>
+
+<details>
+<summary> 9. 移动零 (easy)（https://leetcode-cn.com/problems/move-zeroes/） </summary> 
+</details>
+
+<details>
+<summary> 10. 递增的三元子序列 (medium)（https://leetcode-cn.com/problems/increasing-triplet-subsequence/） </summary> 
+</details>
+
+<details>
+<summary> 11. 搜索二维矩阵 II (medium)（https://leetcode-cn.com/problems/search-a-2d-matrix-ii/） </summary> 
+</details>
+
+<details>
+<summary> 12. 除自身以外数组的乘积 (medium)（https://leetcode-cn.com/problems/product-of-array-except-self/） </summary> 
+</details>
+
 
 ## 链表类
 
@@ -323,7 +365,13 @@ public:
 
 
 ### 栈
+<details>
+<summary> 1. 基本计算器 II (medium)（https://leetcode-cn.com/problems/basic-calculator-ii/） </summary> 
+</details>
 
+<details>
+<summary> 2. 逆波兰表达式求值 (medium)（https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/） </summary> 
+</details>
 
 ### 队列
 
