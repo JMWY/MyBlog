@@ -91,6 +91,27 @@ private:
 ## 数组类
 <details>
 <summary> 1. 最大子段和 (easy)（https://leetcode-cn.com/problems/maximum-subarray/） </summary> 
+
+```cpp
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int maxSum = INT_MIN;
+        int curSum = 0;
+        for (size_t id = 0; id < nums.size(); ++id) {
+            if (curSum <= 0) {
+                curSum = 0;
+            }
+            curSum += nums[id];
+            if (curSum > maxSum) {
+                maxSum = curSum;
+            }
+        }
+        return maxSum;
+    }
+};
+```
+
 </details>
 
 <details>
@@ -141,11 +162,71 @@ private:
 ## 链表类
 
 <details>
-<summary> 1. 反转链表 （easy）（https://leetcode-cn.com/problems/reverse-linked-list/） </summary> 
+<summary> 1. 反转链表 （easy）（https://leetcode-cn.com/problems/reverse-linked-list/） </summary>
+    
+```cpp
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if (!head) {
+            return head;
+        }
+        ListNode *cur = head;
+        ListNode *pre = NULL;
+        ListNode *post = NULL;
+        while (cur != NULL) {
+            post = cur->next;
+            cur->next = pre;
+            pre = cur;
+            cur = post;
+        }
+        return pre;
+    }
+};
+```
+
 </details>
 
 <details>
 <summary> 2. 链表中倒数第k个节点 (easy)（https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/） </summary> 
+    
+```cpp
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* getKthFromEnd(ListNode* head, int k) {
+        ListNode *fast = head;
+        for (int id = 0; id < k; ++id) {
+            if (!fast) {
+                return NULL;
+            }
+            fast = fast->next;
+        }
+        ListNode *slow = head;
+        while (fast != NULL) {
+            fast = fast->next;
+            slow = slow->next;
+        }
+        return slow;
+    }
+};
+```
+
 </details>
 
 <details>
