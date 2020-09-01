@@ -506,6 +506,110 @@ public:
 
 </details>
 
+<details>
+<summary> 2. LRU缓存机制 (medium &hearts;)（https://leetcode-cn.com/problems/lru-cache/） </summary> 
+   
+```cpp
+class LRUCache {
+private:
+    struct ListNode {
+        int key;
+        int value;
+        ListNode *next;
+        ListNode *pre;
+        ListNode(int k, int v): key(k), value(v), next(NULL), pre(NULL) {}
+    };
+
+public:
+    LRUCache(int capacity)
+        :capacity_(capacity)
+        ,head_(new ListNode(0, 0))
+        ,tail_(new ListNode(0, 0)) {
+            head_->next = tail_;
+            tail_->pre = head_;
+        }
+    ~LRUCache() {
+        ListNode *node = head_;
+        ListNode *post = NULL;
+        while (node != NULL) {
+            post = node->next;
+            delete node;
+            node = post;
+        }
+    }
+    
+    int get(int key) {
+        auto iter = key2node_.find(key);
+        if (iter == key2node_.end()) {
+            return -1;
+        }
+        ListNode *node = iter->second;
+        if (!isHead(node)) {
+            removeNode(node);
+            addToHead(node);
+        }
+        return node->value;
+    }
+    
+    void put(int key, int value) {
+        auto iter = key2node_.find(key);
+        if (iter == key2node_.end()) {
+            if (key2node_.size() < capacity_) {
+                ListNode *node = new ListNode(key, value);
+                addToHead(node);
+                key2node_.insert(make_pair(key, node));
+            } else {
+                ListNode *node = tail_->pre;
+                key2node_.erase(node->key);
+                removeNode(node);
+                node->key = key;
+                node->value = value;
+                key2node_.insert(make_pair(key, node));
+                addToHead(node);
+            }
+        } else {
+            iter->second->value = value;
+            if (!isHead(iter->second)) {
+                removeNode(iter->second);
+                addToHead(iter->second);
+            }
+        }
+    }
+
+private:
+    bool isHead(ListNode *node) {
+        return head_->next == node;
+    }
+
+    void removeNode(ListNode* node) {
+        node->pre->next = node->next;
+        node->next->pre = node->pre;
+    }
+
+    void addToHead(ListNode* node) {
+        node->next = head_->next;
+        head_->next->pre = node;
+        node->pre = head_;
+        head_->next = node;
+    }
+    
+private:
+    int capacity_;
+    ListNode *head_;
+    ListNode *tail_;
+    unordered_map<int, ListNode*> key2node_;
+};
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache* obj = new LRUCache(capacity);
+ * int param_1 = obj->get(key);
+ * obj->put(key,value);
+ */
+```
+    
+</details>
+
 
 
 ### 栈
