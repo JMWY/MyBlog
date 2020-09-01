@@ -88,6 +88,8 @@ private:
 
 </details>
 
+<table><tr><td bgcolor=#98FB98>背景色的设置是按照十六进制颜色值：#98FB98</td></tr></table>
+
 ## 数组类
 <details>
 <summary> 1. 最大子段和 (easy &hearts;)（https://leetcode-cn.com/problems/maximum-subarray/） </summary> 
