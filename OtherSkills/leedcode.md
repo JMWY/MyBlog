@@ -90,7 +90,7 @@ private:
 
 ## 数组类
 <details>
-<summary> 1. 最大子段和 (easy)（https://leetcode-cn.com/problems/maximum-subarray/） </summary> 
+<summary> 1. 最大子段和 (easy &hearts;)（https://leetcode-cn.com/problems/maximum-subarray/） </summary> 
 
 ```cpp
 class Solution {
