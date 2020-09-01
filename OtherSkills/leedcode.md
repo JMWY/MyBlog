@@ -116,7 +116,45 @@ public:
 </details>
 
 <details>
-<summary> 2. 最大子矩阵 (hard)（https://leetcode-cn.com/problems/max-submatrix-lcci/） </summary> 
+<summary> 2. 最大子矩阵 (hard &hearts;)（https://leetcode-cn.com/problems/max-submatrix-lcci/） </summary> 
+    
+```cpp
+class Solution {
+public:
+    vector<int> getMaxMatrix(vector<vector<int>>& matrix) {
+        vector<int> res;
+        int maxSum = INT_MIN;
+        for (size_t row1 = 0; row1 < matrix.size(); ++row1) {
+            // 记录各列的和
+            vector<int> sum(matrix[0].size(), 0);
+            for (size_t row2 = row1; row2 < matrix.size(); ++row2) {
+                int curSum = -1;
+                int col1 = -1;
+                for (size_t col2 = 0; col2 < matrix[0].size(); ++col2) {
+                    sum[col2] += matrix[row2][col2];
+                    if (curSum <= 0) {
+                        // 重置左边列号
+                        curSum = 0;
+                        col1 = col2;
+                    }
+                    curSum += sum[col2];
+                    if (curSum > maxSum) {
+                        // 记录右边列号
+                        maxSum = curSum;
+                        if (res.empty()) {
+                            res.resize(4);
+                        }
+                        res[0] = row1, res[1] = col1;
+                        res[2] = row2, res[3] = col2;
+                    }
+                }
+            }
+        }
+        return res;
+    }
+};
+```
+    
 </details>
 
 <details>
