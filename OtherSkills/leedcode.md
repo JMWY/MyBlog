@@ -311,6 +311,50 @@ public:
 
 <details>
 <summary> 13. 链表求和 (medium)（https://leetcode-cn.com/problems/sum-lists-lcci/） </summary> 
+    
+```cpp
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        ListNode *l3 = NULL;
+        ListNode *l3tail = NULL;
+        int sum = 0;
+        while (l1 != NULL || l2 !=NULL) {
+            if (l1 != NULL && l2 != NULL) {
+                sum += l1->val + l2->val;
+                l1 = l1->next, l2 = l2->next;
+            } else if (l1 != NULL) {
+                sum += l1->val;
+                l1 = l1->next;
+            } else {
+                sum += l2->val;
+                l2 = l2->next;
+            }    
+            if (l3 == NULL) {
+                l3tail = l3 = new ListNode(sum >= 10 ? (sum - 10) : sum);
+            } else {
+                l3tail->next = new ListNode(sum >= 10 ? (sum - 10) : sum);
+                l3tail = l3tail->next;
+            }
+            sum = sum >= 10 ? 1 : 0;
+        }
+        if (sum > 0) {
+            l3tail->next = new ListNode(sum);
+        }
+        return l3;
+    }
+};
+```
+* 如果链表非逆序数字，需要在计算前后分别执行下反转链表。
+
 </details>
 
 <details>
