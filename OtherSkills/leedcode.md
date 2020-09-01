@@ -163,7 +163,7 @@ public:
 ## 链表类
 
 <details>
-<summary> 1. 反转链表 （easy）（https://leetcode-cn.com/problems/reverse-linked-list/） </summary>
+<summary> 1. 反转链表 （easy &hearts;）（https://leetcode-cn.com/problems/reverse-linked-list/） </summary>
     
 ```cpp
 /**
@@ -197,7 +197,7 @@ public:
 </details>
 
 <details>
-<summary> 2. 链表中倒数第k个节点 (easy)（https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/） </summary> 
+<summary> 2. 链表中倒数第k个节点 (easy &hearts;)（https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/） </summary> 
     
 ```cpp
 /**
