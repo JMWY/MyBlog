@@ -269,11 +269,68 @@ public:
 </details>
 
 <details>
-<summary> 3. 环形链表 (easy)（https://leetcode-cn.com/problems/linked-list-cycle/） </summary> 
+<summary> 3. 环形链表 (easy &hearts;)（https://leetcode-cn.com/problems/linked-list-cycle/） </summary> 
+    
+```cpp
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        if (NULL == head || NULL == head->next) {
+            return false;
+        }
+        ListNode *fast = head->next->next;
+        ListNode *slow = head->next;
+        while (fast && fast->next) {
+            if (fast == slow) {
+                return true;
+            }
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        return false;
+    }
+};
+```
+    
 </details>
 
 <details>
-<summary> 4. 相交链表 (easy)（https://leetcode-cn.com/problems/intersection-of-two-linked-lists/） </summary> 
+<summary> 4. 相交链表 (easy &hearts;)（https://leetcode-cn.com/problems/intersection-of-two-linked-lists/） </summary> 
+
+```cpp
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        //  链表 L1 长度为 a+c, 链表 L2 长度为 b+c, 其中 c >= 0.
+        //  由 (a+c)+b == (b+c)+a, 得出两个指针在公共点相遇
+        //  时间复杂度 O(a+b+c)
+        ListNode *p1 = headA;
+        ListNode *p2 = headB;
+        while (p1 != p2) {
+            p1 = (NULL == p1) ? headB : p1->next;
+            p2 = (NULL == p2) ? headA : p2->next;
+        }
+        return p1;
+    }
+};
+```
+ 
 </details>
 
 <details>
@@ -379,6 +436,77 @@ public:
 
 <details>
 <summary> 19. 合并两个有序链表 (easy)（https://leetcode-cn.com/problems/merge-two-sorted-lists/） </summary> 
+
+```cpp
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    //  more effective
+    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
+        ListNode *head = nullptr;
+        ListNode *tail = nullptr;
+        while (l1 && l2) {
+            ListNode *tmpnode = nullptr;
+            if (l1->val <= l2->val) {
+                tmpnode = l1;
+                l1 = l1->next;
+            } else {
+                tmpnode = l2;
+                l2 = l2->next;
+            }
+            if (nullptr == head) {
+                tail = head = tmpnode;
+            } else {
+                tail->next = tmpnode;
+                tail = tail->next;
+            }
+        }
+        if (nullptr == tail) {
+            return (nullptr == l1) ? l2 : l1;
+        }
+        tail->next = (nullptr == l1) ? l2 : l1;
+        return head;
+    }
+};
+```
+
+```cpp
+class Solution {
+public:
+    // more concise
+    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
+        ListNode *head = nullptr;
+        ListNode *tail = nullptr;
+        while (l1 || l2) {
+            ListNode *tmpnode = nullptr;
+            if (!l2 || (l1 && l1->val <= l2->val)) {
+                tmpnode = l1;
+                l1 = l1->next;
+            } else {
+                tmpnode = l2;
+                l2 = l2->next;
+            }
+            if (nullptr == head) {
+                tail = head = tmpnode;
+            } else {
+                tail->next = tmpnode;
+                tail = tail->next;
+            }
+        }
+        return head;
+    }
+};
+```
+
 </details>
 
 <details>
