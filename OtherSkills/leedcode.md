@@ -448,9 +448,9 @@ public:
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+//  more effective
 class Solution {
 public:
-    //  more effective
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
         ListNode *head = nullptr;
         ListNode *tail = nullptr;
@@ -480,9 +480,9 @@ public:
 ```
 
 ```cpp
+// more concise
 class Solution {
 public:
-    // more concise
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
         ListNode *head = nullptr;
         ListNode *tail = nullptr;
