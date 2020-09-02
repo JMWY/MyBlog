@@ -542,11 +542,76 @@ public:
 
 ### 二叉树类
 <details>
-<summary> 1. 二叉树的最近公共祖先 (medium)（https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/） </summary> 
+<summary> 1. 二叉树的最近公共祖先 (medium &hearts;)（https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/） </summary> 
+    
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if (NULL == root || root == p || root == q) {
+            return root;
+        }
+        TreeNode *left = lowestCommonAncestor(root->left, p, q);
+        TreeNode *right = lowestCommonAncestor(root->right, p, q);
+        if (left && right) {
+            return root;
+        }
+        return  (NULL == left) ? right : left;
+    }
+};
+```
+    
 </details>
 
 <details>
-<summary> 2. 平衡二叉树 (easy)（https://leetcode-cn.com/problems/balanced-binary-tree/） </summary> 
+<summary> 2. 平衡二叉树 (easy &hearts;)（https://leetcode-cn.com/problems/balanced-binary-tree/） </summary> 
+    
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+
+    bool isBalanced(TreeNode* root, int& depth) {
+        if (NULL == root) {
+            depth = 0;
+            return true;
+        }
+        int left_depth = 0;
+        int right_depth = 0;
+        if (isBalanced(root->left, left_depth) && isBalanced(root->right, right_depth)) {
+            if ((-1 <= left_depth - right_depth) && (left_depth - right_depth <= 1)) {
+                depth = max(left_depth, right_depth) + 1;
+                return true;
+            }
+        }
+        depth = max(left_depth, right_depth) + 1;
+        return false;
+    }
+
+    bool isBalanced(TreeNode* root) {
+        int depth = 0;
+        return isBalanced(root, depth);        
+    }
+};
+```
+    
 </details>
 
 <details>
