@@ -682,7 +682,7 @@ public:
 
 ## 数学类
 <details>
-<summary> 1. x 的平方根 (easy) </summary> 
+<summary> 1. x 的平方根 (easy &hearts;) （https://leetcode-cn.com/problems/sqrtx/）</summary> 
     
 ```cpp
 // 题解一（按位从大到小试）
