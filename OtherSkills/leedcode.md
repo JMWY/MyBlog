@@ -683,7 +683,7 @@ public:
 ## 数学类
 <details>
 <summary> 1. x 的平方根 (easy) </summary> 
-题解：
+    
 ```cpp
 // 题解一（按位从大到小试）
 class Solution {
@@ -704,6 +704,7 @@ public:
     }
 };
 ```
+
 ```cpp
 // 题解二（二分查找）
 class Solution {
@@ -728,6 +729,7 @@ public:
 };
 
 ```
+
 ```cpp
 // 题解三（牛顿迭代法）
 // 参考地址：https://www.cnblogs.com/liyangguang1988/p/3617926.html
@@ -745,11 +747,11 @@ public:
     }
 };
 ```
-      
+
 </details>
 
 
-##数据结构类
+## 数据结构类
 
 <details>
 <summary> 1. 稀疏相似度 (倒排索引) （https://leetcode-cn.com/problems/sparse-similarity-lcci/） </summary> 
