@@ -682,11 +682,74 @@ public:
 
 ## 数学类
 <details>
-<!--summary> x.  ()（） </summary--> 
+<summary> 1. x 的平方根 (easy) </summary> 
+题解：
+```cpp
+// 题解一（按位从大到小试）
+class Solution {
+public:
+    int mySqrt(int x) {
+        int ret = 0;
+        // (2^16)^2 = 2^32
+        // int cur_bit = 1 << ((sizeof(int) * 8) / 2);
+        int cur_bit = (1 << ((sizeof(int) << 2)));
+        while (cur_bit > 0) {
+            ret ^= cur_bit;
+            if (ret > x / ret) {
+                ret ^= cur_bit;
+            }
+            cur_bit >>= 1; 
+        }
+        return ret;
+    }
+};
+```
+```cpp
+// 题解二（二分查找）
+class Solution {
+public:
+    int mySqrt(int x) {
+        int left = 1;
+        int right = x;
+        while (left <= right) {
+            int cur = left + ((right - left) >> 1);
+            int tmp_val = x / cur;
+            if (cur == tmp_val) {
+                return cur;
+            } else if (cur > tmp_val) {
+                right = cur - 1;
+            } else {
+                left = cur + 1;
+            }
+        }
+        return left - 1;
+        
+    }
+};
+
+```
+```cpp
+// 题解三（牛顿迭代法）
+// 参考地址：https://www.cnblogs.com/liyangguang1988/p/3617926.html
+class Solution {
+public:
+    int mySqrt(int x) {
+        /* 用牛顿迭代法求浮点数的平方根 */ 
+        double g0 = 0, g1 = x;  
+        while(fabs(g1 - g0) > 0.9)  
+        {  
+            g0 = g1;  
+            g1 = (g0 + (x / g0)) / 2;
+        }  
+        return floor(g1); // (int)g1
+    }
+};
+```
+      
 </details>
 
 
-## 数据结构类
+##数据结构类
 
 <details>
 <summary> 1. 稀疏相似度 (倒排索引) （https://leetcode-cn.com/problems/sparse-similarity-lcci/） </summary> 
