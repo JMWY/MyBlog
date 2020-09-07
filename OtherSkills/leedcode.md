@@ -706,7 +706,7 @@ public:
 ```
 
 ```cpp
-// 题解二（二分查找）
+// 题解二（二分查找 - fastest）
 class Solution {
 public:
     int mySqrt(int x) {
