@@ -1,4 +1,4 @@
-# LeedCode 梳理
+# LeetCode 梳理
 
 ## 字符串类
 <details>
