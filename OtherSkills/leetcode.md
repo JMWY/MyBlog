@@ -50,6 +50,7 @@ public:
 <summary> 7. 翻转单词顺序 (easy)（https://leetcode-cn.com/problems/fan-zhuan-dan-ci-shun-xu-lcof/） </summary>
     
 ```cpp
+// 状态转移
 class Solution {
 public:
     string reverseWords(string s) {
