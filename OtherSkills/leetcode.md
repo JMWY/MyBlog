@@ -852,25 +852,25 @@ public:
 ```cpp
 class LRUCache {
 private:
-    struct ListNode {
+    struct DListNode {
         int key;
         int value;
-        ListNode *next;
-        ListNode *pre;
-        ListNode(int k, int v): key(k), value(v), next(NULL), pre(NULL) {}
+        DListNode *next;
+        DListNode *prev;
+        DListNode(int k, int v): key(k), value(v), next(NULL), prev(NULL) {}
     };
 
 public:
     LRUCache(int capacity)
         :capacity_(capacity)
-        ,head_(new ListNode(0, 0))
-        ,tail_(new ListNode(0, 0)) {
+        ,head_(new DListNode(0, 0))
+        ,tail_(new DListNode(0, 0)) {
             head_->next = tail_;
-            tail_->pre = head_;
+            tail_->prev = head_;
         }
     ~LRUCache() {
-        ListNode *node = head_;
-        ListNode *post = NULL;
+        DListNode *node = head_;
+        DListNode *post = NULL;
         while (node != NULL) {
             post = node->next;
             delete node;
@@ -883,7 +883,7 @@ public:
         if (iter == key2node_.end()) {
             return -1;
         }
-        ListNode *node = iter->second;
+        DListNode *node = iter->second;
         if (!isHead(node)) {
             removeNode(node);
             addToHead(node);
@@ -894,19 +894,18 @@ public:
     void put(int key, int value) {
         auto iter = key2node_.find(key);
         if (iter == key2node_.end()) {
+            DListNode *new_node = NULL;
             if (key2node_.size() < capacity_) {
-                ListNode *node = new ListNode(key, value);
-                addToHead(node);
-                key2node_.insert(make_pair(key, node));
+                new_node = new DListNode(key, value);
             } else {
-                ListNode *node = tail_->pre;
-                key2node_.erase(node->key);
-                removeNode(node);
-                node->key = key;
-                node->value = value;
-                key2node_.insert(make_pair(key, node));
-                addToHead(node);
+                new_node = tail_->prev;
+                key2node_.erase(tail_->prev->key);
+                removeNode(tail_->prev);
+                new_node->key = key;
+                new_node->value = value;
             }
+            addToHead(new_node);
+            key2node_.insert(make_pair(key, new_node));
         } else {
             iter->second->value = value;
             if (!isHead(iter->second)) {
@@ -917,27 +916,27 @@ public:
     }
 
 private:
-    bool isHead(ListNode *node) {
+    bool isHead(DListNode *node) {
         return head_->next == node;
     }
 
-    void removeNode(ListNode* node) {
-        node->pre->next = node->next;
-        node->next->pre = node->pre;
+    void removeNode(DListNode* node) {
+        node->prev->next = node->next;
+        node->next->prev = node->prev;
     }
 
-    void addToHead(ListNode* node) {
+    void addToHead(DListNode* node) {
         node->next = head_->next;
-        head_->next->pre = node;
-        node->pre = head_;
+        head_->next->prev = node;
+        node->prev = head_;
         head_->next = node;
     }
     
 private:
     int capacity_;
-    ListNode *head_;
-    ListNode *tail_;
-    unordered_map<int, ListNode*> key2node_;
+    DListNode *head_;
+    DListNode *tail_;
+    unordered_map<int, DListNode*> key2node_;
 };
 
 /**
